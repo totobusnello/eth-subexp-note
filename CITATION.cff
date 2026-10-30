@@ -1,0 +1,33 @@
+cff-version: 1.2.0
+message: "If you use this material, please cite the archived Zenodo record rather than the repository URL."
+title: "A finite range where the SubexponentialSAT bound's exponential factor sits above 2^n with A = 1, and the receipt of a comparator rerun"
+abstract: >-
+  Two checkable things about the SubexponentialSAT challenge of openai/math. First, the receipt of
+  a rerun of leanprover's comparator on the solution, under a real sandbox, with the
+  three limits of that run stated and the raw log included. That run used Lean's default kernel, so
+  it is not a check by a second kernel implementation. Second, a recomputation of the stated
+  time bound: taking A = 1, the ratio runtimeScale(n)/n is not monotone, so the exponential factor
+  sits above 2^n over a finite range of n. Both crossings of that range are closed-form in the
+  Lambert W function, at n = 49.175096 on the principal branch and near 10^2390.21 on branch -1,
+  with the maximum 16/e^2 at L = e^4. The finite range has no asymptotic consequence, and this
+  material refutes nothing: it neither establishes that the formal statement is a faithful
+  rendering of k-SAT nor that the unary encoding keeps the input size polynomial.
+authors:
+  - family-names: Busnello
+    given-names: Luiz Antonio
+    affiliation: "Independent Researcher, São Paulo, Brazil"
+type: software
+license: MIT
+date-released: 2026-10-30
+# The concept DOI is stable across every release, so it is the one that can honestly live inside a
+# snapshot. It is minted with the first release and added here afterwards. Each release also
+# receives its own version DOI, which the files it archives cannot know; find it on the Zenodo
+# record.
+repository-code: "https://github.com/totobusnello/eth-subexp-note"
+keywords:
+  - Exponential Time Hypothesis
+  - computational complexity
+  - Lean 4
+  - proof checking
+  - Lambert W function
+  - reproducibility
