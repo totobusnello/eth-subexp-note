@@ -19,6 +19,7 @@ polynomial.
 
 | | |
 |---|---|
+| [`paper/eth-subexp-note.pdf`](paper/eth-subexp-note.pdf) | the note itself, five pages, readable on its own; same content as this README with an abstract. Source in [`paper/eth-subexp-note.md`](paper/eth-subexp-note.md) |
 | [`RECEIPT_2026-10-28.md`](RECEIPT_2026-10-28.md) | the comparator receipt in full, with its limits, the reading of the statement, and a retraction of two earlier errors of mine |
 | [`logs/comparator_runs_2026-10-27_28.log`](logs/comparator_runs_2026-10-27_28.log) | raw log of all three runs, 3,862 lines, including the two failures that preceded the success. Verbatim, so the progress lines my own script printed are in Portuguese; everything the toolchain and the comparator emitted is in English, as are the lines that carry the verdict |
 | [`scripts/prep_eth_exam.sh`](scripts/prep_eth_exam.sh) | the script that prepared and ran the comparator |
