@@ -155,8 +155,8 @@ The two challenge hashes can be reproduced from the two files at that commit; I 
 
 Cite the archived Zenodo record rather than this repository URL:
 
-    DOI 10.5281/zenodo.23820111
+**https://doi.org/10.5281/zenodo.23820111**
 
 That is the concept DOI, which resolves to the latest version. The v1.0.0 release has its own
-version DOI, 10.5281/zenodo.23820112. Fields for a bibliography are in
-[`CITATION.cff`](CITATION.cff). MIT licence, see [`LICENSE`](LICENSE).
+version DOI, [10.5281/zenodo.23820112](https://doi.org/10.5281/zenodo.23820112). Fields for a
+bibliography are in [`CITATION.cff`](CITATION.cff). MIT licence, see [`LICENSE`](LICENSE).
