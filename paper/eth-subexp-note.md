@@ -1,40 +1,29 @@
----
-title: |
-  A finite range where the SubexponentialSAT bound's exponential
-  factor sits above $2^n$ with $A = 1$, and the receipt of a
-  comparator rerun
-author: Luiz Antonio Busnello\footnote{Independent researcher, São Paulo, Brazil. \texttt{https://doi.org/10.5281/zenodo.23820111}}
-date: 30 October 2026
-abstract: |
-  Two checkable things about the SubexponentialSAT challenge of `openai/math`. The first is the
-  receipt of a rerun of leanprover's comparator on the published solution, carried out under a real
-  sandbox on 2026-10-28, with the provenance needed to repeat it and the raw log of all three runs,
-  the two earlier failures included. Those two were failures of the preparation script rather than
-  verdicts on the proof. Three limits of the run are stated here rather than left to be discovered:
-  it used Lean's default kernel, so it is a rerun and not a check by a second kernel implementation;
-  the recorded commit identifies the comparator source rather than the binary executed; and a
-  comparator result says nothing about whether a formal statement means what the informal claim says.
+## Abstract
 
-  The second is a recomputation of the stated time bound. Dividing $\mathrm{runtimeScale}(n)$ by $n$
-  leaves $\ln(L)^2/\sqrt{L}$ with $L = \ln(n+16)$, which tends to zero, so the exponent is $o(n)$.
-  What the asymptotics do not show is that this ratio is not monotone: it starts below 1, rises to a
-  maximum of $16/e^2$ at $L = e^4$, and falls back. Stipulating $A = 1$, it crosses 1 twice, and both
-  crossings are closed-form in the Lambert $W$ function through $L = \exp(-4W(-1/4))$ on the two real
-  branches: ascending at $n = 49.175096$ and descending near $10^{2390.21}$.
+Two checkable things about the SubexponentialSAT challenge of `openai/math`. The first is the
+receipt of a rerun of leanprover's comparator on the published solution, carried out under a real
+sandbox on 2026-10-28, with the provenance needed to repeat it and the raw log of all three runs,
+the two earlier failures included. Those two were failures of the preparation script rather than
+verdicts on the proof. Three limits of the run are stated here rather than left to be discovered:
+it used Lean's default kernel, so it is a rerun and not a check by a second kernel implementation;
+the recorded commit identifies the comparator source rather than the binary executed; and a
+comparator result says nothing about whether a formal statement means what the informal claim says.
 
-  What this does not establish matters as much as what it does. An upper bound above $2^n$ says
-  nothing about running time, because the algorithm may run far below its own bound. The exponent is
-  $o(n)$ for any fixed $A$, so a finite range cannot bear on an asymptotic statement, and nothing
-  here refutes anything. The constant $A$ is existential in the statement and is not determined by
-  it. Two further conditions are left open and are claimed nowhere: that the formal statement is a
-  faithful rendering of k-SAT, and that the unary encoding keeps the input size polynomial.
-geometry: margin=1.1in
-fontsize: 11pt
-linkcolor: blue
-urlcolor: blue
----
+The second is a recomputation of the stated time bound. Dividing $\mathrm{runtimeScale}(n)$ by $n$
+leaves $\ln(L)^2/\sqrt{L}$ with $L = \ln(n+16)$, which tends to zero, so the exponent is $o(n)$.
+What the asymptotics do not show is that this ratio is not monotone: it starts below 1, rises to a
+maximum of $16/e^2$ at $L = e^4$, and falls back. Stipulating $A = 1$, it crosses 1 twice, and both
+crossings are closed-form in the Lambert $W$ function through $L = \exp(-4W(-1/4))$ on the two real
+branches: ascending at $n = 49.175096$ and descending near $10^{2390.21}$.
 
-# The comparator accepts the solution
+What this does not establish matters as much as what it does. An upper bound above $2^n$ says
+nothing about running time, because the algorithm may run far below its own bound. The exponent is
+$o(n)$ for any fixed $A$, so a finite range cannot bear on an asymptotic statement, and nothing
+here refutes anything. The constant $A$ is existential in the statement and is not determined by
+it. Two further conditions are left open and are claimed nowhere: that the formal statement is a
+faithful rendering of k-SAT, and that the unary encoding keeps the input size polynomial.
+
+## 1. The comparator accepts the solution
 
 On 2026-10-28 the comparator from `leanprover/comparator`, run under a real sandbox, reported that
 the Lean kernel accepts the solution for the challenge's own declaration,
@@ -54,27 +43,27 @@ Three limits of that run, stated so nobody has to find them:
 3. A comparator result says nothing about whether the formal statement means what the informal
    claim says.
 
-# Reading the formal statement by hand
+## 2. Reading the formal statement by hand
 
 What follows is four checks rather than a verdict. Three found no mismatch; the fourth I could not
 complete, and I say where it stops.
 
-**Quantifier order.** One fixed deterministic machine and fixed constants come before the universal
+**Quantifier order:** one fixed deterministic machine and fixed constants come before the universal
 quantifier over $n$ and over formulas.
 
-**Locality of the transition function.** It reads only the tape symbol designated by the current
+**Locality of the transition function:** it reads only the tape symbol designated by the current
 state.
 
-**Strength and reach.** Within the formal definitions, the statement counts satisfying assignments
+**Strength and reach:** within the formal definitions, the statement counts satisfying assignments
 exactly, which is at least as strong as deciding satisfiability, and it covers every $k \geq 2$, so
 $k = 3$ is included.
 
-**Input encoding (not completed).** The encoding is unary. I did not establish what that costs in
+**Input encoding (not completed):** the encoding is unary. I did not establish what that costs in
 encoding length. Unary encoding of an integer is in general exponential in its binary length, and
 whether it stays polynomial here depends on the bounds on the encoded integers and on the formula
 size, which I did not check.
 
-# The bound, and the ratio
+## 3. The bound, and the ratio
 
 The stated bound is
 $$T \leq C \cdot (\mathrm{bits}+1)^d \cdot 2^{A \cdot \mathrm{runtimeScale}(n)}, \qquad
@@ -89,7 +78,7 @@ which tends to zero. For any fixed $A$, that makes the exponent $o(n)$ in the nu
 Whether an $o(n)$ exponent contradicts the ETH needs the two conditions named in the abstract,
 neither established nor claimed here.
 
-# The ratio is not monotone, and both crossings are closed-form
+## 4. The ratio is not monotone, and both crossings are closed-form
 
 What the asymptotics do not show is that $\mathrm{ratio}(n)$ starts below 1, rises to a maximum, and
 falls back. At $A = 1$ it crosses 1 twice. Writing $u = \ln L$, the equation $\mathrm{ratio} = 1$
@@ -122,7 +111,7 @@ factor sits above $2^n$. Since $n$ counts variables and is therefore an integer,
 $n = 50$ up to $10^{2390}$: the crossing falls at 49.175096, so at $n = 49$ the ratio is still
 0.999421 and at $n = 50$ it is 1.002702.
 
-# Two things that do not follow
+## 5. Two things that do not follow
 
 **It does not show the algorithm is slower than exhaustive search.** An upper bound above $2^n$ says
 nothing about the running time, which may sit far below its own bound. The comparison here is
@@ -137,7 +126,7 @@ wider. Without $A$, the effective range is undetermined. The bound on $n$ is not
 $n = 0$ the exponent is $A \cdot \mathrm{runtimeScale}(0) = 0$, so both sides equal 1 and neither is
 below the other.
 
-# Provenance, and how to repeat it
+## 6. Provenance, and how to repeat it
 
 ```
 examined clone  openai/math at 7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a
