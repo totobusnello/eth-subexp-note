@@ -20,9 +20,11 @@ type: software
 license: MIT
 date-released: 2026-10-30
 # The concept DOI is stable across every release, so it is the one that can honestly live inside a
-# snapshot. It is minted with the first release and added here afterwards. Each release also
-# receives its own version DOI, which the files it archives cannot know; find it on the Zenodo
-# record.
+# snapshot. It was minted with the v1.0.0 release on 2026-10-30 and added here afterwards, which is
+# why the v1.0.0 archive itself does not carry it: no first release can contain a DOI that does not
+# exist yet. Each release also receives its own version DOI (v1.0.0 is 10.5281/zenodo.23820112);
+# find those on the Zenodo record.
+doi: 10.5281/zenodo.23820111
 repository-code: "https://github.com/totobusnello/eth-subexp-note"
 keywords:
   - Exponential Time Hypothesis

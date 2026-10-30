@@ -151,7 +151,12 @@ exponent is A * runtimeScale(0) = 0, so both sides equal 1 and neither is below 
 The two challenge hashes can be reproduced from the two files at that commit; I did that on
 2026-10-29 and both match byte for byte.
 
-## License
+## How to cite, and license
 
-MIT, see [`LICENSE`](LICENSE). Cite the archived Zenodo record rather than this repository URL; see
-[`CITATION.cff`](CITATION.cff).
+Cite the archived Zenodo record rather than this repository URL:
+
+    DOI 10.5281/zenodo.23820111
+
+That is the concept DOI, which resolves to the latest version. The v1.0.0 release has its own
+version DOI, 10.5281/zenodo.23820112. Fields for a bibliography are in
+[`CITATION.cff`](CITATION.cff). MIT licence, see [`LICENSE`](LICENSE).
