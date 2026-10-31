@@ -1,13 +1,24 @@
 ## Abstract
 
-Two checkable things about the SubexponentialSAT challenge of `openai/math`. The first is the
-receipt of a rerun of leanprover's comparator on the published solution, carried out under a real
-sandbox on 2026-10-28, with the provenance needed to repeat it and the raw log of all three runs,
-the two earlier failures included. Those two were failures of the preparation script rather than
-verdicts on the proof. Three limits of the run are stated here rather than left to be discovered:
-it used Lean's default kernel, so it is a rerun and not a check by a second kernel implementation;
-the recorded commit identifies the comparator source rather than the binary executed; and a
-comparator result says nothing about whether a formal statement means what the informal claim says.
+Both Lean proofs published against the Exponential Time Hypothesis were rerun locally under the
+official comparator, and both are accepted. The first is the SubexponentialSAT challenge of
+`openai/math`, rerun under a real sandbox on 2026-10-28, with the provenance needed to repeat it
+and the raw log of all three runs, the two earlier failures included. Those two were failures of
+the preparation script rather than verdicts on the proof. Three limits of that run are stated here
+rather than left to be discovered: it used Lean's default kernel, so it is a rerun and not a check
+by a second kernel implementation; the recorded commit identifies the comparator source rather than
+the binary executed; and a comparator result says nothing about whether a formal statement means
+what the informal claim says.
+
+The second is the different proof of a similar result published by `anthropics/formal-math`, run on
+2026-10-30 through the full verification their own CI runs. Their configuration enables the
+`nanoda` kernel, so there two independently written kernel implementations accept the same proof,
+which closes the first of the three limits above. Their reference statement is 17 lines and the
+file that defines its meaning is 182, with definitions only, so that statement was also read by
+hand; six checks are reported, among them the input-encoding question that the openAI reading had
+to leave open and that closes here by reading the definitions. One limit remains there, and their
+own file declares it: the bridge from Mathlib's machine type to the usual notion of algorithm is
+prose, not part of what Lean checked.
 
 The second is a recomputation of the stated time bound. Dividing $\mathrm{runtimeScale}(n)$ by $n$
 leaves $\ln(L)^2/\sqrt{L}$ with $L = \ln(n+16)$, which tends to zero, so the exponent is $o(n)$.
@@ -23,7 +34,7 @@ here refutes anything. The constant $A$ is existential in the statement and is n
 it. Two further conditions are left open and are claimed nowhere: that the formal statement is a
 faithful rendering of k-SAT, and that the unary encoding keeps the input size polynomial.
 
-## 1. The comparator accepts the solution
+## 1. The comparator accepts the openAI solution
 
 On 2026-10-28 the comparator from `leanprover/comparator`, run under a real sandbox, reported that
 the Lean kernel accepts the solution for the challenge's own declaration,
@@ -43,7 +54,7 @@ Three limits of that run, stated so nobody has to find them:
 3. A comparator result says nothing about whether the formal statement means what the informal
    claim says.
 
-## 2. Reading the formal statement by hand
+## 2. Reading the openAI statement by hand
 
 What follows is four checks rather than a verdict. Three found no mismatch; the fourth I could not
 complete, and I say where it stops.
@@ -126,7 +137,7 @@ wider. Without $A$, the effective range is undetermined. The bound on $n$ is not
 $n = 0$ the exponent is $A \cdot \mathrm{runtimeScale}(0) = 0$, so both sides equal 1 and neither is
 below the other.
 
-## 6. Provenance, and how to repeat it
+## 6. Provenance of the openAI run, and how to repeat it
 
 ```
 examined clone  openai/math at 7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a
@@ -152,3 +163,39 @@ object rather than a rerun of this rerun.
 Everything cited here, including the receipt, the raw log of all three runs and the script, is in
 the deposit: `https://doi.org/10.5281/zenodo.23820111`, with the working repository at
 `https://github.com/totobusnello/eth-subexp-note`. MIT licence.
+
+## 7. The Anthropic proof, and two kernels
+
+On 2026-10-30 the same official tooling was run on the other proof: the `eth/` directory of
+`anthropics/formal-math` at commit `16a5ce41`, the one the announcement links. Verdict
+`ANTHROPIC_COMPARATOR_OK` in 42 min 28 s on five cores, against 3 h 47 min for the openAI run.
+
+Their `comparator.json` sets `enable_nanoda: true`, so the exported proof is checked twice, in two
+independently written kernels. The log reads, in order: `Running nanoda kernel on solution`,
+`nanoda kernel accepts the solution`, `Running Lean default kernel on solution.`,
+`Lean default kernel accepts the solution`, `Your solution is okay!`. That closes limit 1 of
+section 1. Limits 2 and 3 still hold: recorded commits identify sources rather than binaries, and
+no comparator result speaks to meaning. Both declarations the challenge names,
+`MainResults.ethIsFalse` and `MainResults.mainTheorem`, print exactly
+`[propext, Classical.choice, Quot.sound]`, and here those two *are* the declarations that print
+their axioms, so the gap section 1 had to leave open does not arise.
+
+Reading the statement is cheap there by their design. `Challenge.lean` is 17 lines and imports
+`MainResults.lean` alone, which has definitions only and imports Mathlib alone, so the whole
+meaning of both claims fits in 182 readable lines; their README says the file is kept short
+precisely so a reader can check it. Of six checks reported in the receipt, two are worth stating
+here. First, the encoding question that section 2 could not close, closes: `encClauses` writes the
+variable count $n$ in unary but each clause as $k$ positions of $\lfloor\log_2 2n\rfloor + 1$
+bits, so the input is about $n + 1 + mk(\lfloor\log_2 2n\rfloor + 1)$ bits, polynomial in $n$ and
+$m$, the unary part being linear rather than exponential. Second, both statements require every
+stack alphabet to be finite, where Mathlib requires only the input stack's, which makes the claim
+harder rather than easier.
+
+What remains outside Lean there is declared in their own file: a random-access machine simulates
+their machine type with bounded overhead, and rewriting a formula between two variable namings is
+polynomial, from which $s_3 = 0$ in their sense gives $s_3 = 0$ in the usual sense — and then,
+verbatim, "The simulation and the rewriting are standard facts; they are not part of the Lean
+statements or proofs." So the kernels certify a theorem about Mathlib's machine type, and the step
+to the hypothesis as complexity theory states it is prose. Naming which step is extra-Lean is more
+than the other challenge did. The proof development itself was not read here; that is what the two
+kernels checked.

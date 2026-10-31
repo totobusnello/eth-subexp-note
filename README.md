@@ -1,28 +1,48 @@
-# A finite range where the stated bound's exponential factor sits above 2^n, taking A = 1
+# Independent replication of both ETH proofs, and a finite range where the openAI bound's exponential factor sits above 2^n
 
-Two checkable things about the `SubexponentialSAT` challenge of
-[`openai/math`](https://github.com/openai/math): the receipt of a rerun of the official comparator
-on the solution, and a recomputation of the stated time bound.
+Two Lean proofs were published against the Exponential Time Hypothesis: the `SubexponentialSAT`
+challenge of [`openai/math`](https://github.com/openai/math), and a different proof of a similar
+result by [`anthropics/formal-math`](https://github.com/anthropics/formal-math). **Both were rerun
+here, locally, under the official comparator, and both are accepted.** Receipts and raw logs for
+each are in this repository, together with a recomputation of the openAI time bound.
 
-The two differ in what checking them costs. The arithmetic reproduces in seconds with nothing but a
-Python interpreter. The comparator run took 3 h 47 min over 12,014 build jobs and needs a Linux host
-with Lean, elan and landrun installed, so for most readers the receipt and the raw log are the
-practical object, not a rerun of my rerun.
+| run | verdict | kernels | receipt |
+|---|---|---|---|
+| openAI, `SubexponentialSAT` | accepted, 2026-10-28 | Lean's default kernel only (their `.json` sets `enable_nanoda: false`) | [`RECEIPT_2026-10-28.md`](RECEIPT_2026-10-28.md) |
+| Anthropic, `eth/` | accepted, 2026-10-30 | **two** — `nanoda` and Lean's default (their `.json` sets `enable_nanoda: true`) | [`RECEIPT_ANTHROPIC_2026-10-30.md`](RECEIPT_ANTHROPIC_2026-10-30.md) |
 
-**What this is not.** It is not a refutation of anything, and it does not claim the algorithm is
-slow. The finite range below has no asymptotic consequence, and the two reasons why are stated in
-section 5. Two conditions are left unestablished and are claimed nowhere here: that the formal
-statement is a faithful rendering of k-SAT, and that the unary encoding keeps the input size
-polynomial.
+The second run closes the first of the three limits stated for the first one: it is a check by two
+independently written kernel implementations, which the openAI challenge's configuration does not
+allow. Section 7 covers it, and the sections numbered 1 to 6 are about the openAI run, unchanged.
+
+The three objects differ in what checking them costs. The arithmetic reproduces in seconds with
+nothing but a Python interpreter. The openAI comparator run took 3 h 47 min over 12,014 build jobs;
+the Anthropic one took 42 min 28 s on five cores. Both need a Linux host with Lean, elan and
+landrun, because `landrun` exists only on Linux, so for most readers the receipts and the raw logs
+are the practical object, not a rerun of my reruns.
+
+**What this is not.** Accepting a proof is not endorsing a claim, and nothing here says the ETH is
+false or true. It is not a refutation of anything either, and it does not claim the algorithm is
+slow: the finite range below has no asymptotic consequence, and the two reasons why are stated in
+section 5.
+
+For the **openAI** statement, two conditions are left unestablished and are claimed nowhere here:
+that the formal statement is a faithful rendering of k-SAT, and that the unary encoding keeps the
+input size polynomial. For the **Anthropic** statement, the second of those is settled by reading
+the definitions, and section 7 shows where; what remains outside Lean there is a bridge their own
+file declares as such, and that too is in section 7 rather than left for a reader to notice.
 
 ## What is in this repository
 
 | | |
 |---|---|
 | [`paper/eth-subexp-note.pdf`](paper/eth-subexp-note.pdf) | the note itself, three pages, readable on its own; same content as this README with an abstract. Source in [`paper/eth-subexp-note.md`](paper/eth-subexp-note.md), built by [`paper/build.sh`](paper/build.sh) in the same format as this project's other deposit notes |
-| [`RECEIPT_2026-10-28.md`](RECEIPT_2026-10-28.md) | the comparator receipt in full, with its limits, the reading of the statement, and a retraction of two earlier errors of mine |
-| [`logs/comparator_runs_2026-10-27_28.log`](logs/comparator_runs_2026-10-27_28.log) | raw log of all three runs, 3,862 lines, including the two failures that preceded the success. Verbatim, so the progress lines my own script printed are in Portuguese; everything the toolchain and the comparator emitted is in English, as are the lines that carry the verdict |
-| [`scripts/prep_eth_exam.sh`](scripts/prep_eth_exam.sh) | the script that prepared and ran the comparator |
+| [`RECEIPT_2026-10-28.md`](RECEIPT_2026-10-28.md) | the openAI comparator receipt in full, with its limits, the reading of the statement, and a retraction of two earlier errors of mine |
+| [`RECEIPT_ANTHROPIC_2026-10-30.md`](RECEIPT_ANTHROPIC_2026-10-30.md) | the Anthropic receipt: two kernels, the full provenance, a reading of the statement as six checks, and the one limit their own file declares to be outside Lean |
+| [`logs/comparator_runs_2026-10-27_28.log`](logs/comparator_runs_2026-10-27_28.log) | raw log of all three openAI runs, 3,862 lines, including the two failures that preceded the success. Verbatim, so the progress lines my own script printed are in Portuguese; everything the toolchain and the comparator emitted is in English, as are the lines that carry the verdict |
+| [`logs/anthropic_comparator_run_2026-10-30.log`](logs/anthropic_comparator_run_2026-10-30.log) | raw log of the Anthropic run, 1,296 lines, two dry runs and the real one. Same convention: my progress lines are in Portuguese, everything the toolchain emitted is in English. sha256 `89482f8a9f23c4591435950d07f36a36c741019b5c879ecc5a4fec40ec664824` |
+| [`scripts/prep_eth_exam.sh`](scripts/prep_eth_exam.sh) | the script that prepared and ran the openAI comparator |
+| [`scripts/prep_eth_anthropic.sh`](scripts/prep_eth_anthropic.sh) | the script for the Anthropic run: their procedure, their pinned commits, with the PATH gate proved against a planted offender on every run |
 | [`scripts/runtime_scale_crossover.py`](scripts/runtime_scale_crossover.py) | reproduces the crossings, the maximum and the threshold on A; eight self-tests, plus `--plant` |
 | [`scripts/runtime_scale_crossover.csv`](scripts/runtime_scale_crossover.csv) | the ratio tabulated in `L = ln(n+16)` |
 
@@ -35,7 +55,7 @@ python3 scripts/runtime_scale_crossover.py --plant   # the self-tests must rejec
 
 ---
 
-## 1. The comparator accepts the solution
+## 1. The comparator accepts the openAI solution
 
 On 2026-10-28 the comparator from `leanprover/comparator`, run under a real sandbox, reported that
 the Lean kernel accepts the solution for the challenge's own declaration,
@@ -55,7 +75,7 @@ Three limits of that run, stated so nobody has to find them:
 3. A comparator result says nothing about whether the formal statement means what the informal
    claim says.
 
-## 2. Reading the formal statement by hand
+## 2. Reading the openAI statement by hand
 
 What follows is four checks rather than a verdict. Three of them found no mismatch; the fourth I
 could not complete, and I say where it stops.
@@ -138,7 +158,7 @@ the exponential factor stays under 2^n for every n at least 1. With A above 1 th
 Without A, the effective range is undetermined. The bound on n is not pedantry: at n = 0 the
 exponent is A * runtimeScale(0) = 0, so both sides equal 1 and neither is below the other.
 
-## 6. Provenance
+## 6. Provenance of the openAI run
 
     examined clone  openai/math at 7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a
     challenge json  sha256 debbfdc9c01104d2369be80da5180978275106df8b685f693fba7ce7da7c5b19
@@ -151,6 +171,88 @@ exponent is A * runtimeScale(0) = 0, so both sides equal 1 and neither is below 
 
 The two challenge hashes can be reproduced from the two files at that commit; I did that on
 2026-10-29 and both match byte for byte.
+
+## 7. The Anthropic proof, and two kernels
+
+On 2026-10-30 the same official tooling was run on the other proof: the `eth/` directory of
+`anthropics/formal-math`, at commit `16a5ce41304fcdaea4e0be7c132e1c361dc26da5`, the one the blog
+links. Verdict `ANTHROPIC_COMPARATOR_OK` in 42 min 28 s on five cores. The full receipt is
+[`RECEIPT_ANTHROPIC_2026-10-30.md`](RECEIPT_ANTHROPIC_2026-10-30.md); what follows is what a reader
+of this page should not have to open a second file to learn.
+
+**Two kernels, not one.** Their `comparator.json` sets `enable_nanoda: true`, so the comparator
+checks the exported proof twice, in two independently written implementations. Lines 1288 to 1294 of
+the raw log, verbatim:
+
+```
+Running nanoda kernel on solution
+nanoda kernel accepts the solution
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!
+PASS comparator.json
+All 1 comparator configuration(s) accepted.
+```
+
+That is the first of the three limits of section 1 closed. The other two still hold here: the
+recorded commits identify sources rather than the binaries executed, and no comparator result speaks
+to whether a formal statement means what an informal claim says.
+
+**Both declarations use only the permitted axioms**, and here they are the two the challenge names,
+so there is no gap of the kind section 1 had to leave open:
+
+```
+'MainResults.ethIsFalse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainResults.mainTheorem' depends on axioms: [propext, Classical.choice, Quot.sound]
+```
+
+**The statement was read by hand, and here that is cheap.** `Challenge.lean` is 17 lines and imports
+`MainResults.lean` alone; that file has definitions only, no theorem and no proof, and imports
+Mathlib alone. So the entire meaning of both claims fits in 182 readable lines, which is a design
+choice of theirs and their README says so: "no machine checks that this file says what the paper
+says; the file is kept short so that a reader can check this." Six checks are in the receipt. Two
+are worth lifting to this page:
+
+- **The encoding question that section 2 could not close, closes here.** For the openAI statement the
+  input encoding is unary and I could not establish what that costs in length. Here `encClauses`
+  writes the variable count n in unary but each clause as k positions of `Nat.log2 (2n) + 1` bits,
+  which is binary — about `n + 1 + m·k·(⌊log₂ 2n⌋ + 1)` bits in all, polynomial in n and m. The
+  unary part is linear, not exponential.
+- **The alphabets are finite by a hypothesis stronger than the library's.** Both statements carry
+  `∀ i, Finite (M.tm.Γ i)`, and the file notes that Mathlib requires only the input stack's alphabet
+  to be finite. The extra condition makes the claim harder to prove, not easier.
+
+**What is outside Lean there, by their own declaration.** The head comment of `MainResults.lean`
+argues that a random-access machine simulates their `Turing.FinTM2` with bounded overhead, and that
+rewriting a formula between two variable namings is polynomial, so that s₃ = 0 in their sense gives
+s₃ = 0 in the usual sense. It then states: "The simulation and the rewriting are standard facts;
+they are not part of the Lean statements or proofs." So the kernels certify a theorem about
+Mathlib's machine type, and the step to the hypothesis as complexity theory states it is prose.
+Naming which step is extra-Lean is more than the other challenge did, and it is the place where a
+further reader is most useful.
+
+**I did not read the proof** — `Solution.lean` draws both theorems from three other developments,
+and none of that was read here. That is what the two kernels checked. Kernels for the proof, a human
+for the statement.
+
+### Provenance of the Anthropic run
+
+    examined clone    anthropics/formal-math at 16a5ce41304fcdaea4e0be7c132e1c361dc26da5
+    comparator.json   sha256 757e5537ccf47d1946521b0b5fb91a230cdcfd8933dc9ab047710709c15ffa7e
+    Challenge.lean    sha256 63f54edafad0b4d1a4184c6279dc2fea4d8b3a6ef39fa04ab7fa72e86bfbb39e
+    Solution.lean     sha256 27d304798a6ec294db7fdeee301227b70d72044cb31c85615901a8d728b0b98f
+    MainResults.lean  sha256 47f78a9550d95b37d8718dd1ee16ae824da893a5e17c319f737e6d0a5ed24944
+    project toolchain leanprover/lean4:v4.33.1, theirs, read from lean-toolchain
+    comparator        575674928e239f5bc452aab72d1dd7b0f1326494, the commit their CI pins
+    lean4export       15f6055e299ad5b89345e533cc2192f4cc00f659, at revision b18d673bd29b476466a51a3be1012df2ed322b10
+    second kernel     nanoda_lib @ 68d5ca9db226849b41a6fff59d796ff19d0a8840
+    sandbox           landrun @ 811cfff51ceaf3d9843708aa6d22e9b84ccac8b4
+    build size        8,708 jobs for Challenge, 9,516 for Solution
+    cost              42 min 28 s of wall clock on 5 of 8 cores
+
+All four hashes were recomputed from the files at that commit on 2026-10-31 and match byte for byte.
+Three of the four are printed by the run itself; the one for `Solution.lean` is not, which is why it
+was checked against the source.
 
 ## How to cite, and license
 

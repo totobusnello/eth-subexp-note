@@ -1,0 +1,1296 @@
+=============== 2026-10-30T20:38:20-03:00 etapa 0: inicio (prova da Anthropic)
+=============== 2026-10-30T20:38:20-03:00 etapa 1 as sete ferramentas que o CI deles exige, com infrator
+  git -> /usr/bin/git
+  nao_existe_este_binario_7p -> AUSENTE DO PATH
+  jq -> /usr/bin/jq
+  [prova-do-gate] o infrator reprovou, como devia
+  git -> /usr/bin/git
+  go -> /usr/bin/go
+  cargo -> /root/.cargo/bin/cargo
+  jq -> /usr/bin/jq
+  lean -> /root/.elan/bin/lean
+  lake -> /root/.elan/bin/lake
+  landrun -> /usr/local/bin/landrun
+=============== 2026-10-30T20:38:20-03:00 etapa 2 clone do anthropics/formal-math no commit que o blog linka
+Cloning into '/root/eth_anthropic/formal-math'...
+Updating files:   0% (1/1872)Updating files:   1% (19/1872)Updating files:   2% (38/1872)Updating files:   3% (57/1872)Updating files:   4% (75/1872)Updating files:   5% (94/1872)Updating files:   6% (113/1872)Updating files:   7% (132/1872)Updating files:   8% (150/1872)Updating files:   9% (169/1872)Updating files:  10% (188/1872)Updating files:  11% (206/1872)Updating files:  12% (225/1872)Updating files:  13% (244/1872)Updating files:  14% (263/1872)Updating files:  15% (281/1872)Updating files:  16% (300/1872)Updating files:  17% (319/1872)Updating files:  18% (337/1872)Updating files:  19% (356/1872)Updating files:  20% (375/1872)Updating files:  21% (394/1872)Updating files:  22% (412/1872)Updating files:  23% (431/1872)Updating files:  24% (450/1872)Updating files:  25% (468/1872)Updating files:  26% (487/1872)Updating files:  27% (506/1872)Updating files:  28% (525/1872)Updating files:  29% (543/1872)Updating files:  30% (562/1872)Updating files:  31% (581/1872)Updating files:  32% (600/1872)Updating files:  33% (618/1872)Updating files:  34% (637/1872)Updating files:  35% (656/1872)Updating files:  36% (674/1872)Updating files:  37% (693/1872)Updating files:  38% (712/1872)Updating files:  39% (731/1872)Updating files:  40% (749/1872)Updating files:  41% (768/1872)Updating files:  42% (787/1872)Updating files:  43% (805/1872)Updating files:  44% (824/1872)Updating files:  45% (843/1872)Updating files:  46% (862/1872)Updating files:  47% (880/1872)Updating files:  48% (899/1872)Updating files:  49% (918/1872)Updating files:  50% (936/1872)Updating files:  51% (955/1872)Updating files:  52% (974/1872)Updating files:  53% (993/1872)Updating files:  54% (1011/1872)Updating files:  55% (1030/1872)Updating files:  56% (1049/1872)Updating files:  57% (1068/1872)Updating files:  58% (1086/1872)Updating files:  59% (1105/1872)Updating files:  60% (1124/1872)Updating files:  61% (1142/1872)Updating files:  62% (1161/1872)Updating files:  63% (1180/1872)Updating files:  64% (1199/1872)Updating files:  65% (1217/1872)Updating files:  66% (1236/1872)Updating files:  67% (1255/1872)Updating files:  68% (1273/1872)Updating files:  69% (1292/1872)Updating files:  70% (1311/1872)Updating files:  71% (1330/1872)Updating files:  72% (1348/1872)Updating files:  73% (1367/1872)Updating files:  74% (1386/1872)Updating files:  75% (1404/1872)Updating files:  76% (1423/1872)Updating files:  77% (1442/1872)Updating files:  78% (1461/1872)Updating files:  79% (1479/1872)Updating files:  80% (1498/1872)Updating files:  81% (1517/1872)Updating files:  82% (1536/1872)Updating files:  83% (1554/1872)Updating files:  84% (1573/1872)Updating files:  85% (1592/1872)Updating files:  86% (1610/1872)Updating files:  87% (1629/1872)Updating files:  88% (1648/1872)Updating files:  89% (1667/1872)Updating files:  90% (1685/1872)Updating files:  91% (1704/1872)Updating files:  92% (1723/1872)Updating files:  93% (1741/1872)Updating files:  94% (1760/1872)Updating files:  95% (1779/1872)Updating files:  96% (1798/1872)Updating files:  97% (1816/1872)Updating files:  97% (1829/1872)Updating files:  98% (1835/1872)Updating files:  99% (1854/1872)Updating files: 100% (1872/1872)Updating files: 100% (1872/1872), done.
+  sha pedido:  16a5ce41304fcdaea4e0be7c132e1c361dc26da5
+  sha no disco: 16a5ce41304fcdaea4e0be7c132e1c361dc26da5
+=============== 2026-10-30T20:38:24-03:00 etapa 3 o que vamos conferir, verbatim
+  toolchain deles: leanprover/lean4:v4.33.1
+  sha256 do comparator.json:  757e5537ccf47d1946521b0b5fb91a230cdcfd8933dc9ab047710709c15ffa7e
+  sha256 do MainResults.lean: 47f78a9550d95b37d8718dd1ee16ae824da893a5e17c319f737e6d0a5ed24944
+  sha256 do Challenge.lean:   63f54edafad0b4d1a4184c6279dc2fea4d8b3a6ef39fa04ab7fa72e86bfbb39e
+--- comparator.json ---
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "MainResults.ethIsFalse",
+    "MainResults.mainTheorem"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}
+  nanoda habilitado? true  <<< e o que a corrida da OpenAI nao tinha
+jq: error: syntax error, unexpected INVALID_CHARACTER at <top-level>, line 1, column 23:
+    .theorem_names | join(\", \")
+                          ^
+jq: 1 compile error
+  teoremas: 
+=============== 2026-10-30T20:38:24-03:00 etapa 4 a cota de CPU, obrigatoria pela p27 (c), conferida DENTRO do scope
+  nproc no host: 8   cota: 500%   nproc no scope: 5
+ETH_SO_CONFERIR=1: tudo conferido e NADA foi construido.
+RESULT=DRY_RUN_OK
+=============== 2026-10-30T20:38:24-03:00 etapa 9 fim (dry-run)
+=============== 2026-10-30T20:38:39-03:00 etapa 0: inicio (prova da Anthropic)
+=============== 2026-10-30T20:38:39-03:00 etapa 1 as sete ferramentas que o CI deles exige, com infrator
+  git -> /usr/bin/git
+  nao_existe_este_binario_7p -> AUSENTE DO PATH
+  jq -> /usr/bin/jq
+  [prova-do-gate] o infrator reprovou, como devia
+  git -> /usr/bin/git
+  go -> /usr/bin/go
+  cargo -> /root/.cargo/bin/cargo
+  jq -> /usr/bin/jq
+  lean -> /root/.elan/bin/lean
+  lake -> /root/.elan/bin/lake
+  landrun -> /usr/local/bin/landrun
+=============== 2026-10-30T20:38:39-03:00 etapa 2 clone do anthropics/formal-math no commit que o blog linka
+  sha pedido:  16a5ce41304fcdaea4e0be7c132e1c361dc26da5
+  sha no disco: 16a5ce41304fcdaea4e0be7c132e1c361dc26da5
+=============== 2026-10-30T20:38:39-03:00 etapa 3 o que vamos conferir, verbatim
+  toolchain deles: leanprover/lean4:v4.33.1
+  sha256 do comparator.json:  757e5537ccf47d1946521b0b5fb91a230cdcfd8933dc9ab047710709c15ffa7e
+  sha256 do MainResults.lean: 47f78a9550d95b37d8718dd1ee16ae824da893a5e17c319f737e6d0a5ed24944
+  sha256 do Challenge.lean:   63f54edafad0b4d1a4184c6279dc2fea4d8b3a6ef39fa04ab7fa72e86bfbb39e
+--- comparator.json ---
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "MainResults.ethIsFalse",
+    "MainResults.mainTheorem"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}
+  nanoda habilitado? true  <<< e o que a corrida da OpenAI nao tinha
+  teoremas:
+    MainResults.ethIsFalse
+    MainResults.mainTheorem
+=============== 2026-10-30T20:38:39-03:00 etapa 4 a cota de CPU, obrigatoria pela p27 (c), conferida DENTRO do scope
+  nproc no host: 8   cota: 500%   nproc no scope: 5
+ETH_SO_CONFERIR=1: tudo conferido e NADA foi construido.
+RESULT=DRY_RUN_OK
+=============== 2026-10-30T20:38:39-03:00 etapa 9 fim (dry-run)
+=============== 2026-10-30T20:43:59-03:00 etapa 0: inicio (prova da Anthropic)
+=============== 2026-10-30T20:43:59-03:00 etapa 1 as sete ferramentas que o CI deles exige, com infrator
+  git -> /usr/bin/git
+  nao_existe_este_binario_7p -> AUSENTE DO PATH
+  jq -> /usr/bin/jq
+  [prova-do-gate] o infrator reprovou, como devia
+  git -> /usr/bin/git
+  go -> /usr/bin/go
+  cargo -> /root/.cargo/bin/cargo
+  jq -> /usr/bin/jq
+  lean -> /root/.elan/bin/lean
+  lake -> /root/.elan/bin/lake
+  landrun -> /usr/local/bin/landrun
+=============== 2026-10-30T20:44:00-03:00 etapa 2 clone do anthropics/formal-math no commit que o blog linka
+  sha pedido:  16a5ce41304fcdaea4e0be7c132e1c361dc26da5
+  sha no disco: 16a5ce41304fcdaea4e0be7c132e1c361dc26da5
+=============== 2026-10-30T20:44:00-03:00 etapa 3 o que vamos conferir, verbatim
+  toolchain deles: leanprover/lean4:v4.33.1
+  sha256 do comparator.json:  757e5537ccf47d1946521b0b5fb91a230cdcfd8933dc9ab047710709c15ffa7e
+  sha256 do MainResults.lean: 47f78a9550d95b37d8718dd1ee16ae824da893a5e17c319f737e6d0a5ed24944
+  sha256 do Challenge.lean:   63f54edafad0b4d1a4184c6279dc2fea4d8b3a6ef39fa04ab7fa72e86bfbb39e
+--- comparator.json ---
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "MainResults.ethIsFalse",
+    "MainResults.mainTheorem"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": true
+}
+  nanoda habilitado? true  <<< e o que a corrida da OpenAI nao tinha
+  teoremas:
+    MainResults.ethIsFalse
+    MainResults.mainTheorem
+=============== 2026-10-30T20:44:00-03:00 etapa 4 a cota de CPU, obrigatoria pela p27 (c), conferida DENTRO do scope
+  nproc no host: 8   cota: 500%   nproc no scope: 5
+=============== 2026-10-30T20:44:00-03:00 etapa 5 lake exe cache get (mathlib v4.33.1 pre-compilado)
+info: downloading https://releases.lean-lang.org/lean4/v4.33.1/lean-4.33.1-linux.tar.zst
+info: installing /root/.elan/toolchains/leanprover--lean4---v4.33.1
+info: mathlib: cloning https://github.com/leanprover-community/mathlib4
+info: mathlib: checking out revision '0df444a360eaa60ab8c11dca51a86af692955474'
+info: plausible: cloning https://github.com/leanprover-community/plausible
+info: plausible: checking out revision 'b7eb3304aeae834b12dda98993a37f6a41f6f0bb'
+info: LeanSearchClient: cloning https://github.com/leanprover-community/LeanSearchClient
+info: LeanSearchClient: checking out revision '5f4d51b81cbd3f6b32b156bfad9056621a040404'
+info: importGraph: cloning https://github.com/leanprover-community/import-graph
+info: importGraph: checking out revision '16f02aa7642864af59f1ff0e384a015994db9118'
+info: proofwidgets: cloning https://github.com/leanprover-community/ProofWidgets4
+info: proofwidgets: checking out revision '4be2e3d5087eeb272cf5a8853b8f9dd025ef5957'
+info: aesop: cloning https://github.com/leanprover-community/aesop
+info: aesop: checking out revision '3448c0bcc5ce01b2d1546e483ec3620e32df3d0e'
+info: Qq: cloning https://github.com/leanprover-community/quote4
+info: Qq: checking out revision '92c15be17b7caf78c2ad767ec40f89052d908d81'
+info: batteries: cloning https://github.com/leanprover-community/batteries
+info: batteries: checking out revision '4488d40d070b9700d4d5a6aa342f0d40c31b2a2d'
+info: Cli: cloning https://github.com/leanprover/lean4-cli
+info: Cli: checking out revision '6130a47896ce867c6a4a55373441e59e565bad0f'
+✔ [1/5] Built Cache.Cli (575ms)
+✔ [2/5] Built Cache.Lean (695ms)
+✔ [6/26] Built Cache.Cli:c.o (201ms)
+✔ [7/26] Built Cache.Lean:c.o (248ms)
+✔ [8/26] Built Cache.Infra (594ms)
+✔ [9/26] Built Cache.Infra:c.o (278ms)
+✔ [10/26] Built Batteries.Tactic.OpenPrivate (1.3s)
+✔ [11/26] Built Batteries.Tactic.OpenPrivate:c.o (1.6s)
+✔ [12/26] Built Cache.IO (2.1s)
+✔ [13/26] Built Cache.Hashing (1.2s)
+✔ [14/26] Built Cache.Hashing:c.o (555ms)
+✔ [15/26] Built Cache.IO:c.o (2.2s)
+✔ [16/26] Built Cache.Requests (3.0s)
+✔ [17/26] Built Cache.Marker (863ms)
+✔ [18/26] Built Cache.Marker:c.o (148ms)
+✔ [19/26] Built Cache.Query (1.1s)
+✔ [20/26] Built Cache.Query:c.o (424ms)
+✔ [21/26] Built Cache.Warning (1.1s)
+✔ [22/26] Built Cache.Warning:c.o (356ms)
+✔ [23/26] Built Cache.Requests:c.o (3.7s)
+✔ [24/26] Built Cache.Main (1.8s)
+✔ [25/26] Built Cache.Main:c.o (1.3s)
+✔ [26/26] Built cache:exe (1.3s)
+Current branch: HEAD
+Using cache from origin: (some leanprover-community/mathlib4)
+Attempting to download 8690 file(s) from leanprover-community/mathlib4 cache at https://lakecache.blob.core.windows.net/mathlib4-master
+Downloaded: 1 file(s) [attempted 1/8690 = 0%, 23 KB/s], Decompressed: 0Downloaded: 7 file(s) [attempted 7/8690 = 0%, 6 KB/s], Decompressed: 3Downloaded: 18 file(s) [attempted 18/8690 = 0%, 13 KB/s], Decompressed: 7Downloaded: 39 file(s) [attempted 39/8690 = 0%, 18 KB/s], Decompressed: 17Downloaded: 58 file(s) [attempted 58/8690 = 0%, 201 KB/s], Decompressed: 17Downloaded: 78 file(s) [attempted 78/8690 = 0%, 117 KB/s], Decompressed: 17Downloaded: 108 file(s) [attempted 108/8690 = 1%, 101 KB/s], Decompressed: 39Downloaded: 144 file(s) [attempted 144/8690 = 1%, 310 KB/s], Decompressed: 39Downloaded: 167 file(s) [attempted 167/8690 = 1%, 62 KB/s], Decompressed: 39Downloaded: 191 file(s) [attempted 191/8690 = 2%, 195 KB/s], Decompressed: 39Downloaded: 225 file(s) [attempted 225/8690 = 2%, 653 KB/s], Decompressed: 94Downloaded: 249 file(s) [attempted 249/8690 = 2%, 108 KB/s], Decompressed: 94Downloaded: 278 file(s) [attempted 278/8690 = 3%, 662 KB/s], Decompressed: 94Downloaded: 316 file(s) [attempted 316/8690 = 3%, 467 KB/s], Decompressed: 94Downloaded: 345 file(s) [attempted 345/8690 = 3%, 116 KB/s], Decompressed: 94Downloaded: 376 file(s) [attempted 376/8690 = 4%, 19 KB/s], Decompressed: 94Downloaded: 412 file(s) [attempted 412/8690 = 4%, 126 KB/s], Decompressed: 94Downloaded: 443 file(s) [attempted 443/8690 = 5%, 725 KB/s], Decompressed: 94Downloaded: 474 file(s) [attempted 474/8690 = 5%, 978 KB/s], Decompressed: 94Downloaded: 515 file(s) [attempted 515/8690 = 5%, 155 KB/s], Decompressed: 205Downloaded: 541 file(s) [attempted 541/8690 = 6%, 193 KB/s], Decompressed: 205Downloaded: 572 file(s) [attempted 572/8690 = 6%, 1167 KB/s], Decompressed: 205Downloaded: 599 file(s) [attempted 599/8690 = 6%, 262 KB/s], Decompressed: 205Downloaded: 641 file(s) [attempted 641/8690 = 7%, 65 KB/s], Decompressed: 205Downloaded: 675 file(s) [attempted 675/8690 = 7%, 628 KB/s], Decompressed: 205Downloaded: 699 file(s) [attempted 699/8690 = 8%, 73 KB/s], Decompressed: 205Downloaded: 748 file(s) [attempted 748/8690 = 8%, 96 KB/s], Decompressed: 205Downloaded: 797 file(s) [attempted 797/8690 = 9%, 1156 KB/s], Decompressed: 205Downloaded: 842 file(s) [attempted 842/8690 = 9%, 151 KB/s], Decompressed: 205Downloaded: 878 file(s) [attempted 878/8690 = 10%, 22 KB/s], Decompressed: 205Downloaded: 891 file(s) [attempted 891/8690 = 10%, 1209 KB/s], Decompressed: 205Downloaded: 933 file(s) [attempted 933/8690 = 10%, 342 KB/s], Decompressed: 205Downloaded: 944 file(s) [attempted 944/8690 = 10%, 266 KB/s], Decompressed: 205Downloaded: 982 file(s) [attempted 982/8690 = 11%, 62 KB/s], Decompressed: 205Downloaded: 987 file(s) [attempted 987/8690 = 11%, 201 KB/s], Decompressed: 205Downloaded: 1031 file(s) [attempted 1031/8690 = 11%, 641 KB/s], Decompressed: 205Downloaded: 1034 file(s) [attempted 1034/8690 = 11%, 413 KB/s], Decompressed: 205Downloaded: 1078 file(s) [attempted 1078/8690 = 12%, 380 KB/s], Decompressed: 205Downloaded: 1118 file(s) [attempted 1118/8690 = 12%, 186 KB/s], Decompressed: 205Downloaded: 1125 file(s) [attempted 1125/8690 = 12%, 47 KB/s], Decompressed: 205Downloaded: 1168 file(s) [attempted 1168/8690 = 13%, 886 KB/s], Decompressed: 205Downloaded: 1184 file(s) [attempted 1184/8690 = 13%, 245 KB/s], Decompressed: 205Downloaded: 1218 file(s) [attempted 1218/8690 = 14%, 1065 KB/s], Decompressed: 205Downloaded: 1233 file(s) [attempted 1233/8690 = 14%, 88 KB/s], Decompressed: 205Downloaded: 1282 file(s) [attempted 1282/8690 = 14%, 380 KB/s], Decompressed: 205Downloaded: 1318 file(s) [attempted 1318/8690 = 15%, 78 KB/s], Decompressed: 205Downloaded: 1367 file(s) [attempted 1367/8690 = 15%, 300 KB/s], Decompressed: 205Downloaded: 1382 file(s) [attempted 1382/8690 = 15%, 118 KB/s], Decompressed: 205Downloaded: 1418 file(s) [attempted 1418/8690 = 16%, 213 KB/s], Decompressed: 205Downloaded: 1467 file(s) [attempted 1467/8690 = 16%, 539 KB/s], Decompressed: 205Downloaded: 1516 file(s) [attempted 1516/8690 = 17%, 498 KB/s], Decompressed: 205Downloaded: 1565 file(s) [attempted 1565/8690 = 18%, 46 KB/s], Decompressed: 205Downloaded: 1600 file(s) [attempted 1600/8690 = 18%, 263 KB/s], Decompressed: 205Downloaded: 1620 file(s) [attempted 1620/8690 = 18%, 275 KB/s], Decompressed: 205Downloaded: 1665 file(s) [attempted 1665/8690 = 19%, 462 KB/s], Decompressed: 205Downloaded: 1705 file(s) [attempted 1705/8690 = 19%, 277 KB/s], Decompressed: 205Downloaded: 1723 file(s) [attempted 1723/8690 = 19%, 492 KB/s], Decompressed: 205Downloaded: 1765 file(s) [attempted 1765/8690 = 20%, 461 KB/s], Decompressed: 205Downloaded: 1792 file(s) [attempted 1792/8690 = 20%, 789 KB/s], Decompressed: 205Downloaded: 1827 file(s) [attempted 1827/8690 = 21%, 60 KB/s], Decompressed: 205Downloaded: 1867 file(s) [attempted 1867/8690 = 21%, 275 KB/s], Decompressed: 205Downloaded: 1892 file(s) [attempted 1892/8690 = 21%, 95 KB/s], Decompressed: 205Downloaded: 1939 file(s) [attempted 1939/8690 = 22%, 80 KB/s], Decompressed: 205Downloaded: 1985 file(s) [attempted 1985/8690 = 22%, 40 KB/s], Decompressed: 205Downloaded: 2023 file(s) [attempted 2023/8690 = 23%, 214 KB/s], Decompressed: 512Downloaded: 2037 file(s) [attempted 2037/8690 = 23%, 65 KB/s], Decompressed: 512Downloaded: 2083 file(s) [attempted 2083/8690 = 23%, 104 KB/s], Decompressed: 512Downloaded: 2121 file(s) [attempted 2121/8690 = 24%, 120 KB/s], Decompressed: 512Downloaded: 2150 file(s) [attempted 2150/8690 = 24%, 560 KB/s], Decompressed: 512Downloaded: 2183 file(s) [attempted 2183/8690 = 25%, 150 KB/s], Decompressed: 512Downloaded: 2221 file(s) [attempted 2221/8690 = 25%, 265 KB/s], Decompressed: 512Downloaded: 2252 file(s) [attempted 2252/8690 = 25%, 183 KB/s], Decompressed: 512Downloaded: 2284 file(s) [attempted 2284/8690 = 26%, 108 KB/s], Decompressed: 512Downloaded: 2321 file(s) [attempted 2321/8690 = 26%, 239 KB/s], Decompressed: 512Downloaded: 2341 file(s) [attempted 2341/8690 = 26%, 393 KB/s], Decompressed: 512Downloaded: 2384 file(s) [attempted 2384/8690 = 27%, 32 KB/s], Decompressed: 512Downloaded: 2428 file(s) [attempted 2428/8690 = 27%, 63 KB/s], Decompressed: 512Downloaded: 2442 file(s) [attempted 2442/8690 = 28%, 258 KB/s], Decompressed: 512Downloaded: 2491 file(s) [attempted 2491/8690 = 28%, 184 KB/s], Decompressed: 512Downloaded: 2539 file(s) [attempted 2539/8690 = 29%, 1333 KB/s], Decompressed: 512Downloaded: 2588 file(s) [attempted 2588/8690 = 29%, 384 KB/s], Decompressed: 512Downloaded: 2635 file(s) [attempted 2635/8690 = 30%, 117 KB/s], Decompressed: 512Downloaded: 2644 file(s) [attempted 2644/8690 = 30%, 133 KB/s], Decompressed: 512Downloaded: 2691 file(s) [attempted 2691/8690 = 30%, 51 KB/s], Decompressed: 512Downloaded: 2738 file(s) [attempted 2738/8690 = 31%, 109 KB/s], Decompressed: 512Downloaded: 2746 file(s) [attempted 2746/8690 = 31%, 438 KB/s], Decompressed: 512Downloaded: 2793 file(s) [attempted 2793/8690 = 32%, 414 KB/s], Decompressed: 512Downloaded: 2838 file(s) [attempted 2838/8690 = 32%, 1601 KB/s], Decompressed: 512Downloaded: 2855 file(s) [attempted 2855/8690 = 32%, 244 KB/s], Decompressed: 512Downloaded: 2893 file(s) [attempted 2893/8690 = 33%, 276 KB/s], Decompressed: 512Downloaded: 2940 file(s) [attempted 2940/8690 = 33%, 1046 KB/s], Decompressed: 512Downloaded: 2965 file(s) [attempted 2965/8690 = 34%, 127 KB/s], Decompressed: 512Downloaded: 2996 file(s) [attempted 2996/8690 = 34%, 179 KB/s], Decompressed: 512Downloaded: 3027 file(s) [attempted 3027/8690 = 34%, 21 KB/s], Decompressed: 512Downloaded: 3060 file(s) [attempted 3060/8690 = 35%, 987 KB/s], Decompressed: 512Downloaded: 3102 file(s) [attempted 3102/8690 = 35%, 24 KB/s], Decompressed: 512Downloaded: 3131 file(s) [attempted 3131/8690 = 36%, 690 KB/s], Decompressed: 512Downloaded: 3158 file(s) [attempted 3158/8690 = 36%, 182 KB/s], Decompressed: 512Downloaded: 3205 file(s) [attempted 3205/8690 = 36%, 724 KB/s], Decompressed: 512Downloaded: 3229 file(s) [attempted 3229/8690 = 37%, 1412 KB/s], Decompressed: 512Downloaded: 3258 file(s) [attempted 3258/8690 = 37%, 978 KB/s], Decompressed: 512Downloaded: 3301 file(s) [attempted 3301/8690 = 37%, 23 KB/s], Decompressed: 512Downloaded: 3329 file(s) [attempted 3329/8690 = 38%, 296 KB/s], Decompressed: 512Downloaded: 3358 file(s) [attempted 3358/8690 = 38%, 118 KB/s], Decompressed: 512Downloaded: 3398 file(s) [attempted 3398/8690 = 39%, 371 KB/s], Decompressed: 512Downloaded: 3430 file(s) [attempted 3430/8690 = 39%, 619 KB/s], Decompressed: 512Downloaded: 3456 file(s) [attempted 3456/8690 = 39%, 36 KB/s], Decompressed: 512Downloaded: 3499 file(s) [attempted 3499/8690 = 40%, 803 KB/s], Decompressed: 512Downloaded: 3536 file(s) [attempted 3536/8690 = 40%, 41 KB/s], Decompressed: 512Downloaded: 3559 file(s) [attempted 3559/8690 = 40%, 392 KB/s], Decompressed: 512Downloaded: 3599 file(s) [attempted 3599/8690 = 41%, 86 KB/s], Decompressed: 512Downloaded: 3639 file(s) [attempted 3639/8690 = 41%, 185 KB/s], Decompressed: 512Downloaded: 3666 file(s) [attempted 3666/8690 = 42%, 144 KB/s], Decompressed: 512Downloaded: 3699 file(s) [attempted 3699/8690 = 42%, 35 KB/s], Decompressed: 512Downloaded: 3735 file(s) [attempted 3735/8690 = 42%, 95 KB/s], Decompressed: 512Downloaded: 3768 file(s) [attempted 3768/8690 = 43%, 202 KB/s], Decompressed: 512Downloaded: 3797 file(s) [attempted 3797/8690 = 43%, 120 KB/s], Decompressed: 512Downloaded: 3837 file(s) [attempted 3837/8690 = 44%, 226 KB/s], Decompressed: 512Downloaded: 3868 file(s) [attempted 3868/8690 = 44%, 1187 KB/s], Decompressed: 512Downloaded: 3897 file(s) [attempted 3897/8690 = 44%, 327 KB/s], Decompressed: 512Downloaded: 3930 file(s) [attempted 3930/8690 = 45%, 557 KB/s], Decompressed: 512Downloaded: 3970 file(s) [attempted 3970/8690 = 45%, 628 KB/s], Decompressed: 512Downloaded: 4006 file(s) [attempted 4006/8690 = 46%, 168 KB/s], Decompressed: 512Downloaded: 4046 file(s) [attempted 4046/8690 = 46%, 22 KB/s], Decompressed: 512Downloaded: 4075 file(s) [attempted 4075/8690 = 46%, 207 KB/s], Decompressed: 512Downloaded: 4106 file(s) [attempted 4106/8690 = 47%, 101 KB/s], Decompressed: 512Downloaded: 4146 file(s) [attempted 4146/8690 = 47%, 813 KB/s], Decompressed: 512Downloaded: 4173 file(s) [attempted 4173/8690 = 48%, 321 KB/s], Decompressed: 512Downloaded: 4204 file(s) [attempted 4204/8690 = 48%, 33 KB/s], Decompressed: 512Downloaded: 4240 file(s) [attempted 4240/8690 = 48%, 124 KB/s], Decompressed: 512Downloaded: 4269 file(s) [attempted 4269/8690 = 49%, 39 KB/s], Decompressed: 512Downloaded: 4304 file(s) [attempted 4304/8690 = 49%, 271 KB/s], Decompressed: 512Downloaded: 4342 file(s) [attempted 4342/8690 = 49%, 421 KB/s], Decompressed: 512Downloaded: 4371 file(s) [attempted 4371/8690 = 50%, 28 KB/s], Decompressed: 512Downloaded: 4398 file(s) [attempted 4398/8690 = 50%, 259 KB/s], Decompressed: 512Downloaded: 4435 file(s) [attempted 4435/8690 = 51%, 52 KB/s], Decompressed: 512Downloaded: 4465 file(s) [attempted 4465/8690 = 51%, 161 KB/s], Decompressed: 512Downloaded: 4493 file(s) [attempted 4493/8690 = 51%, 557 KB/s], Decompressed: 512Downloaded: 4536 file(s) [attempted 4536/8690 = 52%, 58 KB/s], Decompressed: 512Downloaded: 4565 file(s) [attempted 4565/8690 = 52%, 53 KB/s], Decompressed: 512Downloaded: 4593 file(s) [attempted 4593/8690 = 52%, 104 KB/s], Decompressed: 512Downloaded: 4634 file(s) [attempted 4634/8690 = 53%, 63 KB/s], Decompressed: 512Downloaded: 4662 file(s) [attempted 4662/8690 = 53%, 460 KB/s], Decompressed: 512Downloaded: 4691 file(s) [attempted 4691/8690 = 53%, 113 KB/s], Decompressed: 512Downloaded: 4731 file(s) [attempted 4731/8690 = 54%, 367 KB/s], Decompressed: 512Downloaded: 4765 file(s) [attempted 4765/8690 = 54%, 118 KB/s], Decompressed: 512Downloaded: 4792 file(s) [attempted 4792/8690 = 55%, 467 KB/s], Decompressed: 512Downloaded: 4832 file(s) [attempted 4832/8690 = 55%, 254 KB/s], Decompressed: 512Downloaded: 4867 file(s) [attempted 4867/8690 = 56%, 661 KB/s], Decompressed: 512Downloaded: 4892 file(s) [attempted 4892/8690 = 56%, 1135 KB/s], Decompressed: 512Downloaded: 4932 file(s) [attempted 4932/8690 = 56%, 507 KB/s], Decompressed: 512Downloaded: 4967 file(s) [attempted 4967/8690 = 57%, 353 KB/s], Decompressed: 512Downloaded: 4999 file(s) [attempted 4999/8690 = 57%, 59 KB/s], Decompressed: 512Downloaded: 5032 file(s) [attempted 5032/8690 = 57%, 92 KB/s], Decompressed: 512Downloaded: 5067 file(s) [attempted 5067/8690 = 58%, 24 KB/s], Decompressed: 512Downloaded: 5101 file(s) [attempted 5101/8690 = 58%, 109 KB/s], Decompressed: 512Downloaded: 5136 file(s) [attempted 5136/8690 = 59%, 896 KB/s], Decompressed: 512Downloaded: 5170 file(s) [attempted 5170/8690 = 59%, 225 KB/s], Decompressed: 512Downloaded: 5203 file(s) [attempted 5203/8690 = 59%, 317 KB/s], Decompressed: 512Downloaded: 5243 file(s) [attempted 5243/8690 = 60%, 57 KB/s], Decompressed: 512Downloaded: 5274 file(s) [attempted 5274/8690 = 60%, 87 KB/s], Decompressed: 512Downloaded: 5299 file(s) [attempted 5299/8690 = 60%, 286 KB/s], Decompressed: 512Downloaded: 5339 file(s) [attempted 5339/8690 = 61%, 633 KB/s], Decompressed: 512Downloaded: 5377 file(s) [attempted 5377/8690 = 61%, 1446 KB/s], Decompressed: 512Downloaded: 5401 file(s) [attempted 5401/8690 = 62%, 63 KB/s], Decompressed: 512Downloaded: 5439 file(s) [attempted 5439/8690 = 62%, 1026 KB/s], Decompressed: 512Downloaded: 5477 file(s) [attempted 5477/8690 = 63%, 1626 KB/s], Decompressed: 512Downloaded: 5501 file(s) [attempted 5501/8690 = 63%, 126 KB/s], Decompressed: 512Downloaded: 5546 file(s) [attempted 5546/8690 = 63%, 67 KB/s], Decompressed: 512Downloaded: 5579 file(s) [attempted 5579/8690 = 64%, 559 KB/s], Decompressed: 512Downloaded: 5602 file(s) [attempted 5602/8690 = 64%, 488 KB/s], Decompressed: 512Downloaded: 5646 file(s) [attempted 5646/8690 = 64%, 452 KB/s], Decompressed: 512Downloaded: 5682 file(s) [attempted 5682/8690 = 65%, 167 KB/s], Decompressed: 512Downloaded: 5702 file(s) [attempted 5702/8690 = 65%, 113 KB/s], Decompressed: 512Downloaded: 5746 file(s) [attempted 5746/8690 = 66%, 90 KB/s], Decompressed: 512Downloaded: 5782 file(s) [attempted 5782/8690 = 66%, 89 KB/s], Decompressed: 512Downloaded: 5804 file(s) [attempted 5804/8690 = 66%, 148 KB/s], Decompressed: 512Downloaded: 5846 file(s) [attempted 5846/8690 = 67%, 3120 KB/s], Decompressed: 512Downloaded: 5866 file(s) [attempted 5866/8690 = 67%, 395 KB/s], Decompressed: 512Downloaded: 5911 file(s) [attempted 5911/8690 = 68%, 322 KB/s], Decompressed: 512Downloaded: 5951 file(s) [attempted 5951/8690 = 68%, 227 KB/s], Decompressed: 512Downloaded: 5967 file(s) [attempted 5967/8690 = 68%, 523 KB/s], Decompressed: 512Downloaded: 6013 file(s) [attempted 6013/8690 = 69%, 380 KB/s], Decompressed: 512Downloaded: 6051 file(s) [attempted 6051/8690 = 69%, 75 KB/s], Decompressed: 512Downloaded: 6067 file(s) [attempted 6067/8690 = 69%, 188 KB/s], Decompressed: 512Downloaded: 6113 file(s) [attempted 6113/8690 = 70%, 596 KB/s], Decompressed: 512Downloaded: 6160 file(s) [attempted 6160/8690 = 70%, 219 KB/s], Decompressed: 512Downloaded: 6185 file(s) [attempted 6185/8690 = 71%, 100 KB/s], Decompressed: 512Downloaded: 6214 file(s) [attempted 6214/8690 = 71%, 192 KB/s], Decompressed: 512Downloaded: 6260 file(s) [attempted 6260/8690 = 72%, 93 KB/s], Decompressed: 512Downloaded: 6278 file(s) [attempted 6278/8690 = 72%, 176 KB/s], Decompressed: 512Downloaded: 6316 file(s) [attempted 6316/8690 = 72%, 71 KB/s], Decompressed: 512Downloaded: 6363 file(s) [attempted 6363/8690 = 73%, 305 KB/s], Decompressed: 512Downloaded: 6385 file(s) [attempted 6385/8690 = 73%, 138 KB/s], Decompressed: 512Downloaded: 6416 file(s) [attempted 6416/8690 = 73%, 209 KB/s], Decompressed: 512Downloaded: 6445 file(s) [attempted 6445/8690 = 74%, 84 KB/s], Decompressed: 512Downloaded: 6485 file(s) [attempted 6485/8690 = 74%, 302 KB/s], Decompressed: 512Downloaded: 6521 file(s) [attempted 6521/8690 = 75%, 48 KB/s], Decompressed: 512Downloaded: 6543 file(s) [attempted 6543/8690 = 75%, 287 KB/s], Decompressed: 512Downloaded: 6590 file(s) [attempted 6590/8690 = 75%, 158 KB/s], Decompressed: 512Downloaded: 6623 file(s) [attempted 6623/8690 = 76%, 1037 KB/s], Decompressed: 512Downloaded: 6650 file(s) [attempted 6650/8690 = 76%, 105 KB/s], Decompressed: 512Downloaded: 6690 file(s) [attempted 6690/8690 = 76%, 39 KB/s], Decompressed: 512Downloaded: 6723 file(s) [attempted 6723/8690 = 77%, 166 KB/s], Decompressed: 1988Downloaded: 6748 file(s) [attempted 6748/8690 = 77%, 604 KB/s], Decompressed: 1988Downloaded: 6792 file(s) [attempted 6792/8690 = 78%, 179 KB/s], Decompressed: 1988Downloaded: 6826 file(s) [attempted 6826/8690 = 78%, 332 KB/s], Decompressed: 1988Downloaded: 6854 file(s) [attempted 6854/8690 = 78%, 268 KB/s], Decompressed: 1988Downloaded: 6892 file(s) [attempted 6892/8690 = 79%, 1130 KB/s], Decompressed: 1988Downloaded: 6926 file(s) [attempted 6926/8690 = 79%, 370 KB/s], Decompressed: 1988Downloaded: 6957 file(s) [attempted 6957/8690 = 80%, 92 KB/s], Decompressed: 1988Downloaded: 6995 file(s) [attempted 6995/8690 = 80%, 124 KB/s], Decompressed: 1988Downloaded: 7032 file(s) [attempted 7032/8690 = 80%, 117 KB/s], Decompressed: 1988Downloaded: 7059 file(s) [attempted 7059/8690 = 81%, 482 KB/s], Decompressed: 1988Downloaded: 7101 file(s) [attempted 7101/8690 = 81%, 263 KB/s], Decompressed: 1988Downloaded: 7137 file(s) [attempted 7137/8690 = 82%, 22 KB/s], Decompressed: 1988Downloaded: 7159 file(s) [attempted 7159/8690 = 82%, 75 KB/s], Decompressed: 1988Downloaded: 7197 file(s) [attempted 7197/8690 = 82%, 311 KB/s], Decompressed: 1988Downloaded: 7235 file(s) [attempted 7235/8690 = 83%, 747 KB/s], Decompressed: 1988Downloaded: 7259 file(s) [attempted 7259/8690 = 83%, 222 KB/s], Decompressed: 1988Downloaded: 7297 file(s) [attempted 7297/8690 = 83%, 1427 KB/s], Decompressed: 1988Downloaded: 7317 file(s) [attempted 7317/8690 = 84%, 223 KB/s], Decompressed: 1988Downloaded: 7360 file(s) [attempted 7360/8690 = 84%, 149 KB/s], Decompressed: 1988Downloaded: 7397 file(s) [attempted 7397/8690 = 85%, 78 KB/s], Decompressed: 1988Downloaded: 7417 file(s) [attempted 7417/8690 = 85%, 143 KB/s], Decompressed: 1988Downloaded: 7460 file(s) [attempted 7460/8690 = 85%, 999 KB/s], Decompressed: 1988Downloaded: 7473 file(s) [attempted 7473/8690 = 85%, 586 KB/s], Decompressed: 1988Downloaded: 7520 file(s) [attempted 7520/8690 = 86%, 608 KB/s], Decompressed: 1988Downloaded: 7566 file(s) [attempted 7566/8690 = 87%, 203 KB/s], Decompressed: 1988Downloaded: 7580 file(s) [attempted 7580/8690 = 87%, 526 KB/s], Decompressed: 1988Downloaded: 7624 file(s) [attempted 7624/8690 = 87%, 101 KB/s], Decompressed: 1988Downloaded: 7669 file(s) [attempted 7669/8690 = 88%, 796 KB/s], Decompressed: 1988Downloaded: 7687 file(s) [attempted 7687/8690 = 88%, 241 KB/s], Decompressed: 1988Downloaded: 7729 file(s) [attempted 7729/8690 = 88%, 461 KB/s], Decompressed: 1988Downloaded: 7774 file(s) [attempted 7774/8690 = 89%, 189 KB/s], Decompressed: 1988Downloaded: 7789 file(s) [attempted 7789/8690 = 89%, 788 KB/s], Decompressed: 1988Downloaded: 7838 file(s) [attempted 7838/8690 = 90%, 115 KB/s], Decompressed: 1988Downloaded: 7883 file(s) [attempted 7883/8690 = 90%, 1059 KB/s], Decompressed: 1988Downloaded: 7891 file(s) [attempted 7891/8690 = 90%, 127 KB/s], Decompressed: 1988Downloaded: 7940 file(s) [attempted 7940/8690 = 91%, 513 KB/s], Decompressed: 1988Downloaded: 7989 file(s) [attempted 7989/8690 = 91%, 156 KB/s], Decompressed: 1988Downloaded: 8038 file(s) [attempted 8038/8690 = 92%, 129 KB/s], Decompressed: 1988Downloaded: 8061 file(s) [attempted 8061/8690 = 92%, 28 KB/s], Decompressed: 1988Downloaded: 8096 file(s) [attempted 8096/8690 = 93%, 722 KB/s], Decompressed: 1988Downloaded: 8138 file(s) [attempted 8138/8690 = 93%, 1162 KB/s], Decompressed: 1988Downloaded: 8156 file(s) [attempted 8156/8690 = 93%, 115 KB/s], Decompressed: 1988Downloaded: 8196 file(s) [attempted 8196/8690 = 94%, 817 KB/s], Decompressed: 1988Downloaded: 8239 file(s) [attempted 8239/8690 = 94%, 101 KB/s], Decompressed: 1988Downloaded: 8259 file(s) [attempted 8259/8690 = 95%, 698 KB/s], Decompressed: 1988Downloaded: 8296 file(s) [attempted 8296/8690 = 95%, 154 KB/s], Decompressed: 1988Downloaded: 8331 file(s) [attempted 8331/8690 = 95%, 323 KB/s], Decompressed: 1988Downloaded: 8361 file(s) [attempted 8361/8690 = 96%, 65 KB/s], Decompressed: 1988Downloaded: 8397 file(s) [attempted 8397/8690 = 96%, 1362 KB/s], Decompressed: 1988Downloaded: 8426 file(s) [attempted 8426/8690 = 96%, 131 KB/s], Decompressed: 1988Downloaded: 8461 file(s) [attempted 8461/8690 = 97%, 46 KB/s], Decompressed: 1988Downloaded: 8497 file(s) [attempted 8497/8690 = 97%, 71 KB/s], Decompressed: 1988Downloaded: 8526 file(s) [attempted 8526/8690 = 98%, 511 KB/s], Decompressed: 1988Downloaded: 8562 file(s) [attempted 8562/8690 = 98%, 47 KB/s], Decompressed: 1988Downloaded: 8597 file(s) [attempted 8597/8690 = 98%, 640 KB/s], Decompressed: 1988Downloaded: 8627 file(s) [attempted 8627/8690 = 99%, 199 KB/s], Decompressed: 1988Downloaded: 8664 file(s) [attempted 8664/8690 = 99%, 351 KB/s], Decompressed: 1988Downloaded: 8690 file(s) [attempted 8690/8690 = 100%, 640 KB/s], Decompressed: 1988Downloaded: 8690 file(s) [attempted 8690/8690 = 100%, 640 KB/s], Decompressed: 1988
+Decompressed 8690 file(s)
+Already decompressed 8690 file(s)
+=============== 2026-10-30T20:48:21-03:00 etapa 6 lake build (eles mediram ~8 min em 24 vCPUs, maior processo ~7 GB)
+✔ [2423/2469] Built ToTuring.Bound (4.4s)
+✔ [2424/2476] Built ToTuring.TM.Tree (4.6s)
+✔ [2425/2481] Built ParityChecksStatement (5.6s)
+✔ [2427/2483] Built ThreeSatStatement (6.1s)
+✔ [2428/2483] Built ToTuring.TM.Run (5.7s)
+✔ [2429/2483] Built PartitionStatement (6.0s)
+✔ [2430/2483] Built PiecesStatement (6.2s)
+✔ [2431/2483] Built LevelsStatement (6.6s)
+✔ [2432/2484] Built PaddedDescent.Params (2.6s)
+✔ [2433/2484] Built Groundwork.Net.Defs (3.9s)
+✔ [2434/2484] Built ToTuring.TM.Frag (4.1s)
+✔ [2435/2484] Built ThmEveryDeltaStatement (4.4s)
+✔ [2436/2484] Built KSatStatement (4.6s)
+✔ [2437/2484] Built ThreeSatRateStatement (5.5s)
+✔ [2438/2484] Built NetworkStatements (6.0s)
+✔ [2439/2487] Built EightSquareStatement (7.2s)
+✔ [2440/2487] Built AppHalfPiecesStatement (8.5s)
+✔ [2441/2495] Built StepMachines.Prog.Chunks (7.0s)
+✔ [2442/2506] Built ToTuring.TM.Stacks (6.6s)
+✔ [2444/2508] Built ToTuring.TM.Rename (6.3s)
+✔ [2445/2508] Built Groundwork.Net.Calculus (7.9s)
+✔ [2446/2508] Built CountKSatStatement (5.3s)
+✔ [2447/2508] Built Groundwork.Net.Colouring (12s)
+✔ [2448/2508] Built StepMachines.Math.GridArith (5.4s)
+✔ [2449/2510] Built StepMachineStatements (5.4s)
+✔ [2450/2510] Built Groundwork.Cross.Bit (6.2s)
+✔ [2451/2510] Built PaperSentencesStatement (5.4s)
+✔ [2452/2512] Built ToTuring.TM.Move (8.4s)
+✔ [2453/2512] Built StepMachines.Math.SatArith (8.4s)
+✔ [2454/2512] Built Groundwork.Net.Net (9.5s)
+✔ [2455/2512] Built Groundwork.Net.ColouringNet (6.1s)
+✔ [2456/2512] Built ClauseBoundStatement (8.1s)
+✔ [2457/2519] Built StepMachines.Prog.Stepped (6.1s)
+✔ [2458/2519] Built StepMachines.Math.SparsifyTree (5.9s)
+✔ [2459/2519] Built StepMachines.Math.SatNet (12s)
+✔ [2460/2519] Built StepMachines.Math.Code (4.0s)
+✔ [2461/2519] Built ToTuring.TM.Ops (5.3s)
+✔ [2462/2519] Built Groundwork.Cross.Cuts (6.3s)
+✔ [2463/2520] Built StepMachines.Math.Formula (5.8s)
+✔ [2464/2520] Built FixedWidthVariableBoundStatement (4.6s)
+✔ [2465/2520] Built StepMachines.Math.Sparsify (4.4s)
+✔ [2466/2520] Built StepMachines.Math.SparsifyCount (4.9s)
+✔ [2467/2525] Built StepMachines.Prog.Walk (5.8s)
+✔ [2468/2527] Built StepMachines.Prog.Comb (7.3s)
+✔ [2469/2527] Built ToTuring.Enc (6.6s)
+✔ [2470/2527] Built StepMachines.Math.Pull (6.7s)
+✔ [2471/2527] Built StepMachines.Prog.Range (8.8s)
+✔ [2472/2527] Built StepMachines.Math.CodeMore (8.4s)
+✔ [2473/2528] Built Groundwork.Grid.Defs (8.7s)
+✔ [2474/2528] Built UniformInKStatement (8.0s)
+✔ [2475/2528] Built StepMachines.Math.SparsifyStep (4.4s)
+✔ [2476/2530] Built SparsifyWidthK.Defs (5.3s)
+✔ [2477/2532] Built StepMachines.Prog.Decode (10s)
+✔ [2478/2536] Built ToTuring.PolyT (6.0s)
+✔ [2479/2539] Built StepMachines.Math.CodeSeq (4.3s)
+✔ [2480/2543] Built MainTheoremFormsStatement (5.6s)
+✔ [2481/2546] Built StepMachines.Prog.Brute (7.1s)
+✔ [2482/2546] Built StepMachines.Math.SparsifyList (5.3s)
+✔ [2483/2546] Built ToTuring.EncLemmas (10s)
+✔ [2484/2555] Built StepMachines.Prog.GridCount (3.9s)
+✔ [2485/2560] Built WidthK.Decode (6.6s)
+✔ [2488/2560] Built StepMachines.Math.RebalanceArith (6.6s)
+✔ [2489/2560] Built ToTuring.Machine.Lift (4.9s)
+✔ [2490/2560] Built Groundwork.Grid.Grid (10s)
+✔ [2491/2560] Built ToTuring.EndLemmas (5.2s)
+✔ [2492/2560] Built StepMachines.Prog.Spec (6.0s)
+✔ [2493/2560] Built CircuitLowerBoundStatement (4.3s)
+✔ [2494/2560] Built StepMachines.Math.SparsifyProg (5.5s)
+✔ [2495/2560] Built ToTuring.Closure.Basic (6.2s)
+✔ [2496/2560] Built AppVariablesStatement (5.3s)
+✔ [2497/2563] Built PaddedDescent.RateLemmas (8.9s)
+✔ [2498/2563] Built StepMachines.Prog.GridDefs (7.6s)
+✔ [2499/2563] Built StepMachines.Prog.SideBasics (6.0s)
+✔ [2500/2570] Built Groundwork.Grid.RowNet (10s)
+✔ [2502/2570] Built StepMachines.Prog.NetProg (6.8s)
+✔ [2503/2570] Built ToTuring.Machine.Host (11s)
+✔ [2504/2571] Built StepMachines.Prog.CountNet (10s)
+✔ [2505/2571] Built CircuitLowerBoundInfinitelyOftenStatement (3.2s)
+✔ [2509/2571] Built SparsifyWidthK.DefsProg (4.6s)
+✔ [2510/2571] Built StepMachines.Prog.BruteE (13s)
+✔ [2511/2571] Built StepMachines.Prog.GridLoop (5.8s)
+✔ [2512/2571] Built StepMachines.Math.Sparse (6.0s)
+✔ [2535/2589] Built ToTuring.Closure.Cases (8.4s)
+✔ [2536/2589] Built Groundwork.Grid.Expand (7.8s)
+✔ [2537/2589] Built PaddedDescent.F.MarkMath (6.5s)
+✔ [2538/2589] Built PaddedDescent.Host (7.3s)
+✔ [2539/2589] Built StepMachines.Prog.NetVal (10s)
+✔ [2540/2589] Built StepMachines.Prog.Count (6.8s)
+✔ [2541/2605] Built QueryMachines.Kernel (5.4s)
+✔ [2551/2655] Built GraphProblemsStatement (5.4s)
+✔ [2593/2723] Built StepMachines.Prog.NetRun (11s)
+✔ [3239/3310] Built StepMachines.Math.CutWord (5.6s)
+✔ [3240/3313] Built ToTuring.Closure.Fold (7.4s)
+✔ [3241/3313] Built Groundwork.Grid.Size (6.3s)
+✔ [3242/3313] Built StepMachines.Prog.Sat (4.5s)
+✔ [3243/3313] Built StepMachines.Math.Digits (6.2s)
+✔ [3244/3316] Built KSatFreeCodeStatement (5.1s)
+✔ [3245/3330] Built ClauseBound.Gen.PartA (5.4s)
+✔ [3246/3330] Built StepMachines.Prog.CutProg (4.4s)
+✔ [3247/3330] Built ToTuring.Machine.EndTM (7.8s)
+✔ [3248/3343] Built CountKSat.Defs (5.1s)
+✔ [3249/3343] Built ToTuring.Lib.Bool (6.2s)
+✔ [3250/3343] Built Paper.SecNetworks_DefFactor (3.9s)
+✔ [3251/3343] Built StepMachines.Math.SideCodes (6.1s)
+✔ [3252/3343] Built QueryMachines.Runs (8.2s)
+✔ [3253/3373] Built Paper.SecNetworks_Model (5.4s)
+✔ [3254/3373] Built ClauseBound.Grid.Size (6.7s)
+✔ [3467/3664] Built ClauseBound.Grid.Expand (5.0s)
+✔ [3915/4032] Built Exits.Defs (5.5s)
+✔ [3916/4075] Built ToTuring.Lib.Table (5.3s)
+✔ [3917/4080] Built Paper.SecCrossing_Crossing (5.3s)
+✔ [3918/4080] Built ToTuring.Lib.List1 (7.1s)
+✔ [3919/4089] Built VariableBound.Params.Defs (14s)
+✔ [3920/4092] Built Eight.SecCrossing_Blocks (15s)
+✔ [3921/4092] Built StepMachines.Math.SideNet (18s)
+✔ [3922/4092] Built ClauseBound.Rec.Few (17s)
+✔ [3923/4092] Built VariableBound.Field.Defs (14s)
+✔ [3924/4094] Built Eight.SecCrossing_Identity (17s)
+✔ [3925/4095] Built ClauseBound.ParityChecks.RunDefs (18s)
+✔ [3926/4098] Built ToTuring.Lib.List1b (18s)
+✔ [3927/4118] Built Paper.SecLevel_Grid (9.1s)
+✔ [3928/4118] Built Eight.SecCrossing_PiecesAC (10s)
+✔ [3930/4118] Built ClauseBound.Part.Rec (11s)
+✔ [3931/4118] Built ClauseBound.Boson.Defs (10s)
+✔ [3932/4118] Built StepMachines.Math.SideX (10s)
+✔ [3933/4118] Built ClauseBound.Rec.Window (11s)
+✔ [3934/4123] Built Wrap.Defs (7.1s)
+✔ [3935/4123] Built ClauseBound.Rec.Tail (10s)
+✔ [3936/4123] Built ClauseBound.Boson.Scalars (14s)
+✔ [3937/4124] Built ClauseBound.Part.Bits (15s)
+✔ [3938/4133] Built ClauseBound.Part.ListP (15s)
+✔ [3939/4133] Built ClauseBound.Boson.Basic (13s)
+✔ [3940/4141] Built ClauseBound.ParityChecks.Params (26s)
+✔ [3941/4141] Built StepMachines.Prog.Side (12s)
+✔ [3942/4143] Built CircuitLowerBound.Defs (5.5s)
+✔ [3943/4145] Built ClauseBound.Rec.Defs (11s)
+✔ [3944/4145] Built ToTuring.Lib.Nat1 (27s)
+✔ [3945/4145] Built ClauseBound.Boson.WickPlus (7.2s)
+✔ [3946/4147] Built ClauseBound.Boson.Defs2 (8.4s)
+✔ [3947/4148] Built CircuitLowerBound.Interfaces (5.7s)
+✔ [3948/4148] Built VariableBound.Paper.Arith (9.8s)
+✔ [3949/4148] Built StepMachines.Prog.SidePresents (9.3s)
+✔ [3950/4148] Built VariableBound.Paper.Rename.Time (5.4s)
+✔ [3951/4148] Built GeneralPieces.Num.PartA (13s)
+✔ [3952/4149] Built ClauseBound.Rec.Number (8.8s)
+✔ [3953/4149] Built ClauseBound.Rec.Blocks (9.9s)
+✔ [3954/4149] Built CircuitLowerBound.Tab.Spec (5.3s)
+✔ [3955/4155] Built WidthThree.Rates (4.8s)
+✔ [3956/4156] Built ToTuring.Lib.Nat1b (9.9s)
+✔ [3957/4156] Built ClauseBound.Boson.Size (8.3s)
+✔ [3958/4156] Built ClauseBound.Boson.Dual (8.3s)
+✔ [3959/4156] Built GeneralPieces.Num.Asymptotic (6.4s)
+✔ [3960/4156] Built Wrap.Arith (16s)
+✔ [3961/4162] Built ClauseBound.Rec.CountRow (16s)
+✔ [3962/4164] Built CircuitLowerBound.Tab.Frame (14s)
+✔ [3963/4164] Built ToTuring.Lib.List2 (14s)
+✔ [3964/4165] Built ClauseBound.Boson.HalfSum (12s)
+✔ [3965/4165] Built ToTuring.Lib.Nat2 (15s)
+✔ [3966/4168] Built ClauseBound.Boson.KF (15s)
+✔ [3967/4168] Built PaddedDescent.Seq (6.1s)
+✔ [3968/4168] Built Wrap.Coding (6.5s)
+✔ [3969/4168] Built ToTuring.Lib.List3 (9.2s)
+✔ [3970/4168] Built ToTuring.Lib.Unary (6.9s)
+✔ [3971/4168] Built ClauseBound.Boson.Half (9.0s)
+✔ [3972/4168] Built CircuitLowerBound.Tab.Sound (11s)
+✔ [3973/4168] Built Wrap.ArithRate (17s)
+✔ [3974/4169] Built PaddedDescent.Pad (10s)
+✔ [3975/4169] Built ToTuring.Poly.Digits (5.4s)
+✔ [3976/4189] Built PaddedDescent.Col.Colouring (30s)
+✔ [3977/4215] Built ToTuring.Poly.Spec (5.3s)
+✔ [3978/4243] Built PaddedDescent.F.NSat (5.4s)
+✔ [3979/4243] Built ToTuring.Lib.Int (15s)
+✔ [3980/4243] Built PaddedDescent.F.LenList (5.8s)
+✔ [3981/4243] Built PaddedDescent.PadRate (6.5s)
+✔ [3982/4252] Built Wrap.CodingExists (8.1s)
+✔ [3983/4256] Built Tower.Kernel (4.3s)
+✔ [3984/4259] Built PaddedDescent.F.Fuel (4.8s)
+✔ [3985/4259] Built ToTuring.Poly.Sparsify (17s)
+✔ [3986/4259] Built ToTuring.Poly.IsPoly (5.7s)
+✔ [3987/4259] Built WidthK.Top.Sat (19s)
+✔ [3988/4259] Built Eight.App_Pieces (6.4s)
+✔ [3989/4259] Built GraphProblems.Defs (5.6s)
+✔ [3990/4259] Built VariableBound.Search.Defs (5.1s)
+✔ [3991/4259] Built SparsifyWidthK.Interfaces (6.2s)
+✔ [3992/4259] Built PaddedDescent.F.Data (5.6s)
+✔ [3993/4263] Built ClauseBound.Inst.HalfPart (10s)
+✔ [3994/4263] Built ToTuring.Poly.Walk (6.7s)
+✔ [3995/4263] Built ToTuring.Poly.Basic (6.0s)
+✔ [3996/4263] Built GraphProblems.Interfaces (7.1s)
+✔ [3997/4264] Built SparsifyWidthK.SetAlg (6.2s)
+✔ [3998/4264] Built SparsifyWidthK.Refine (6.8s)
+✔ [3999/4264] Built ToTuring.Poly.Range (12s)
+✔ [4000/4264] Built ToTuring.Poly.Words (33s)
+✔ [4001/4264] Built SparsifyWidthK.Step (14s)
+✔ [4002/4265] Built SparsifyWidthK.ProgMain (9.0s)
+✔ [4003/4265] Built CountKSat.Interfaces (9.4s)
+✔ [4004/4265] Built SparsifyWidthK.Poly.Sparsify (16s)
+✔ [4005/4266] Built PaddedDescent.F.MarkNet (10s)
+✔ [4006/4266] Built ToTuring.Poly.Brute (5.6s)
+✔ [4007/4266] Built CircuitLowerBound.InterfacesPolyT (6.0s)
+✔ [4008/4266] Built ToTuring.Poly.Comb (10s)
+✔ [4009/4266] Built UniformInK.Spars.Defs (6.1s)
+✔ [4010/4266] Built WidthK.Top.EndLemmas (6.2s)
+✔ [4011/4266] Built SparsifyWidthK.Thresholds (26s)
+✔ [4012/4267] Built CountKSat.StepCount (10s)
+✔ [4013/4267] Built CountKSat.Top.Count (6.8s)
+✔ [4014/4268] Built CountKSat.Walk (8.6s)
+✔ [4015/4268] Built CountKSat.Value (6.8s)
+✔ [4016/4268] Built CountKSat.EndLemmas (7.1s)
+✔ [4017/4268] Built PaddedDescent.F.Prog (8.4s)
+✔ [4018/4268] Built ToTuring.Poly.Grid (7.8s)
+✔ [4019/4268] Built CountKSat.ProgC (6.9s)
+✔ [4020/4268] Built CountKSat.Host (19s)
+✔ [4021/4268] Built GraphProblems.Read (6.5s)
+✔ [4022/4285] Built PaddedDescent.Choice (11s)
+✔ [4023/4285] Built PaddedDescent.F.Price (7.2s)
+✔ [4024/4285] Built PaddedDescent.F.Interfaces (7.4s)
+✔ [4025/4285] Built ClauseBound.Alg.Data (9.5s)
+✔ [4026/4285] Built ToTuring.Poly.NetFun (75s)
+✔ [4027/4285] Built GraphProblems.Host (7.5s)
+✔ [4028/4285] Built Wrap.Sim (6.3s)
+✔ [4029/4285] Built GraphProblems.Sets (5.0s)
+✔ [4030/4285] Built ToTuring.Poly.Cut (22s)
+✔ [4031/4285] Built GraphProblems.Blocks (4.5s)
+✔ [4032/4285] Built PaddedDescent.F.ArithWalk (4.9s)
+✔ [4033/4285] Built Eight.Cor.NSETHDefs (4.4s)
+✔ [4034/4285] Built PaddedDescent.F.MarkDeg (5.8s)
+✔ [4035/4285] Built PaddedDescent.F.Descend (5.7s)
+✔ [4036/4285] Built GraphProblems.DomTree (7.7s)
+✔ [4037/4285] Built PaddedDescent.Col.Good (5.7s)
+✔ [4038/4285] Built PaddedDescent.F.Top (6.0s)
+✔ [4039/4285] Built PaddedDescent.F.Table (9.8s)
+✔ [4040/4286] Built Eight.SecCrossing_PolyDefs (9.1s)
+✔ [4041/4286] Built PaddedDescent.F.MarkPi (12s)
+✔ [4042/4286] Built PaddedDescent.F.MarkProf (11s)
+✔ [4043/4286] Built Paper.SecNetworks_Networks (9.4s)
+✔ [4044/4286] Built ClauseBound.Alg.Prog (10s)
+✔ [4045/4286] Built TwoMachines.Defs (4.0s)
+✔ [4046/4287] Built Eight.SecCrossing_FactDefs (4.9s)
+✔ [4047/4288] Built GraphProblems.Color (6.0s)
+✔ [4048/4288] Built PaddedDescent.F.RebalF (6.0s)
+✔ [4049/4288] Built SingleBitPieces.SecNetworks_LemGrouping (4.7s)
+✔ [4050/4288] Built Eight.SecCrossing_MulOut (7.8s)
+✔ [4051/4288] Built CircuitLowerBound.Main (8.4s)
+✔ [4052/4288] Built Eight.SecNetworks_Defs (8.3s)
+✔ [4053/4289] Built ToTuring.Poly.Decode (74s)
+✔ [4054/4290] Built ClauseBound.Alg.Interfaces (7.9s)
+✔ [4055/4290] Built ToTuring.Poly.Count (106s)
+✔ [4056/4290] Built TwoMachines.Main (9.5s)
+✔ [4057/4290] Built Eight.SecCrossing_Chunk (9.1s)
+✔ [4058/4290] Built PaddedDescent.F.RebalG (7.3s)
+✔ [4059/4290] Built CircuitLowerBound.Small (10s)
+✔ [4060/4290] Built CircuitLowerBound.Tab.Complete (11s)
+✔ [4061/4290] Built Eight.SecNetworks_Clique (8.5s)
+✔ [4062/4290] Built PaddedDescent.BrutePad (6.6s)
+✔ [4063/4291] Built Eight.SecNetworks_LemGrouping (9.7s)
+✔ [4064/4291] Built Eight.SecNetworks_Grouping (13s)
+✔ [4065/4291] Built ToTuring.Poly.Sat (9.3s)
+✔ [4066/4291] Built Wrap.FrontEnd (9.7s)
+✔ [4067/4291] Built ClauseBound.Alg.NeedC (6.0s)
+✔ [4068/4291] Built CircuitLowerBound.Tab.Pack (7.6s)
+✔ [4069/4291] Built ClauseBound.Alg.Need (7.4s)
+✔ [4070/4291] Built ClauseBound.Alg.Descend (7.3s)
+✔ [4071/4291] Built VariableBound.Printed.ThmVariablesADefs (6.4s)
+✔ [4072/4291] Built ClauseBound.Alg.Enum (9.5s)
+✔ [4073/4291] Built ClauseBound.Alg.GridNet (9.4s)
+✔ [4074/4291] Built ToTuring.Poly.GridSide (51s)
+✔ [4075/4291] Built Eight.SecCrossing_Fact (9.1s)
+✔ [4076/4291] Built PaddedDescent.F.SideF (6.2s)
+✔ [4077/4293] Built ClauseBound.Alg.Level (10s)
+✔ [4078/4293] Built CircuitLowerBound.Tab.Table (16s)
+✔ [4079/4293] Built QueryMachines.CombDefs (7.3s)
+✔ [4080/4293] Built PaddedDescent.Reduce (9.6s)
+✔ [4081/4293] Built CircuitLowerBound.Tab.Glue (6.7s)
+✔ [4082/4293] Built Eight.SecNetworks_Tables (10s)
+✔ [4083/4295] Built CountKSat.Poly (4.5s)
+✔ [4084/4295] Built Eight.SecLevel_GridDefs (4.9s)
+✔ [4085/4295] Built Paper.SecLevel_Recursion (4.9s)
+✔ [4086/4296] Built WidthK.Top.Poly (4.8s)
+✔ [4087/4296] Built ClauseBound.Alg.GridPresents (7.0s)
+✔ [4088/4296] Built QueryMachines.CombRunsStatement (5.0s)
+✔ [4089/4296] Built QueryMachines.Comb (6.7s)
+✔ [4090/4297] Built CountKSatRate.Defs (5.3s)
+✔ [4091/4297] Built WidthK.Poly.Decode (44s)
+✔ [4092/4297] Built Paper.SecProof_Proof (6.6s)
+✔ [4093/4297] Built CircuitLowerBound.Cert.Sched (14s)
+✔ [4094/4297] Built Eight.SecLevel_EStar (7.8s)
+✔ [4095/4297] Built CircuitLowerBound.Circ.Blocks (10s)
+✔ [4096/4298] Built CircuitLowerBound.Circ.Norm (8.9s)
+✔ [4097/4298] Built ClauseBound.Alg.Grid (5.3s)
+✔ [4098/4298] Built PrintedStatement (6.8s)
+✔ [4099/4298] Built Tower.Defs (7.0s)
+✔ [4100/4298] Built QueryMachines.CombRuns (7.8s)
+✔ [4101/4298] Built CountKSatRate.Interfaces (5.9s)
+✔ [4102/4298] Built CountKSat.InOut (6.6s)
+✔ [4103/4298] Built QueryMachines.Poly (14s)
+✔ [4104/4300] Built Eight.SecProof_NetworkDefs (6.2s)
+✔ [4105/4300] Built Paper.SecPseudocode_Algorithm (5.7s)
+✔ [4106/4300] Built CircuitLowerBound.Cert.TabF (12s)
+✔ [4107/4300] Built SingleBitPieces.SecProof_Cost (12s)
+✔ [4108/4300] Built CliqueLevelsStatement (5.0s)
+✔ [4109/4300] Built Tower.Runs (6.9s)
+✔ [4110/4300] Built Tower.Chain (6.1s)
+✔ [4111/4300] Built Tower.Toy.Defs (5.0s)
+✔ [4112/4300] Built GraphProblems.Cert (38s)
+✔ [4113/4300] Built Tower.Cost (8.9s)
+✔ [4114/4300] Built CountKSatRate.Stack (7.4s)
+✔ [4115/4300] Built ClauseBound.Alg.Top (7.6s)
+✔ [4116/4300] Built CountKSatRate.Walk (10s)
+✔ [4117/4300] Built CountKSatRate.Tree (8.8s)
+✔ [4118/4300] Built CountKSatRate.Pad (16s)
+✔ [4119/4300] Built PaddedDescent.F.FuelCert (120s)
+✔ [4120/4300] Built CountKSatRate.Brute (10s)
+✔ [4121/4300] Built CountKSatRate.Leaf (11s)
+✔ [4122/4300] Built GraphProblems.Engine (7.5s)
+✔ [4123/4300] Built Tower.Poly (9.2s)
+✔ [4124/4300] Built Eight.Level.Defs (6.4s)
+✔ [4125/4300] Built SingleBitPieces.SecPseudocode_Levels (6.4s)
+✔ [4126/4304] Built CountedToPadded.GenLevelsDefs (5.2s)
+✔ [4127/4304] Built Tower.TowerRuns (8.9s)
+✔ [4128/4304] Built Tower.Toy.Spec (9.2s)
+✔ [4129/4304] Built ClauseBound.Alg.TopArith (10s)
+✔ [4130/4304] Built Eight.SecProof_Network (17s)
+✔ [4131/4304] Built GraphProblems.SetTM (15s)
+✔ [4132/4304] Built VariableBound.Paper.Rename.Defs (7.4s)
+✔ [4133/4304] Built ClauseBound.Alg.TopNet (6.5s)
+✔ [4134/4304] Built ClauseBound.Gen.Defs (9.2s)
+✔ [4135/4304] Built ClauseBound.Alg.End (13s)
+✔ [4136/4304] Built CircuitLowerBound.ENP.Round (36s)
+✔ [4137/4304] Built CircuitLowerBound.Circ.Form (82s)
+✔ [4138/4304] Built PaddedDescent.F.CertSparsify (26s)
+✔ [4139/4304] Built PaddedDescent.F.CertGrid (28s)
+✔ [4140/4304] Built ClauseBound.Alg.Decode (57s)
+✔ [4141/4304] Built ClauseBound.Inst.CertHalfPart (19s)
+✔ [4142/4304] Built ClauseBound.Alg.CertCount (13s)
+✔ [4143/4304] Built CircuitLowerBound.Alg.Parse (52s)
+✔ [4144/4323] Built ClauseBound.Alg.CertLevel (89s)
+✔ [4145/4323] Built GeneralPieces.Num.Between (12s)
+✔ [4146/4323] Built SingleBitPieces.SecCrossing_PolyA (6.5s)
+✔ [4147/4323] Built ClauseBound.Alg.TopVal (7.5s)
+✔ [4148/4323] Built CountKSatRate.Top (4.2s)
+✔ [4149/4323] Built GraphProblems.Sized (5.6s)
+✔ [4150/4323] Built Tower.PolyTower (5.3s)
+✔ [4151/4323] Built Eight.ViaGrouping.Defs (5.0s)
+✔ [4152/4323] Built ClauseBound.Inst.RecArith (104s)
+✔ [4153/4323] Built PaddedDescent.F.CertSide (88s)
+✔ [4154/4323] Built Tower.Toy.Meets (6.1s)
+✔ [4155/4323] Built ClauseBound.Alg.CertTopNet (4.3s)
+✔ [4156/4323] Built CircuitLowerBound.Oracle.Machine (9.9s)
+✔ [4157/4323] Built VariableBound.Paper.Rename.Math (6.1s)
+✔ [4158/4323] Built Eight.SecPseudocode_Levels (12s)
+✔ [4159/4323] Built ClauseBound.TopN.Defs (4.9s)
+✔ [4160/4323] Built ClauseBound.Inst.HalfEnd (4.5s)
+✔ [4161/4323] Built Eight.App_Rate (5.1s)
+✔ [4162/4323] Built ClauseBound.Gen.Seq (4.4s)
+✔ [4163/4323] Built ClauseBound.Gen.Chain (5.5s)
+✔ [4164/4323] Built ClauseBound.Gen.RateAux (8.5s)
+✔ [4165/4323] Built GeneralPieces.Defs (5.3s)
+✔ [4166/4323] Built AppRunningTimeStatement (5.5s)
+✔ [4167/4323] Built ClauseBound.Gen.End (10s)
+✔ [4168/4323] Built PaddedDescent.F.CertTop (5.5s)
+✔ [4169/4323] Built CircuitLowerBound.ENP.Restart (7.9s)
+✔ [4170/4323] Built ClauseBound.Gen.Pick (22s)
+✔ [4171/4323] Built VariableBound.Paper.Rename.Cert (12s)
+✔ [4172/4323] Built CircuitLowerBound.Alg.Machine (13s)
+✔ [4173/4323] Built Eight.Cor.WidthDefs (5.4s)
+✔ [4174/4323] Built SingleBitPieces.Level.Arith (18s)
+✔ [4175/4323] Built SingleBitPieces.Level.Presents (20s)
+✔ [4176/4323] Built ClauseBound.Alg.CertGridG (38s)
+✔ [4177/4323] Built Eight.SecCrossing_Cert (27s)
+✔ [4178/4323] Built SingleBitPieces.Level.Pieces (5.4s)
+✔ [4179/4323] Built Variance.Defs (6.5s)
+✔ [4180/4323] Built GraphProblems.ColorTM (13s)
+✔ [4181/4323] Built Tower.Toy.Machines (15s)
+✔ [4182/4323] Built Eight.ViaGrouping.Search (12s)
+✔ [4183/4323] Built Eight.ViaGrouping.SatPsiDefs (5.9s)
+✔ [4184/4323] Built PaddedDescent.F.CertMark (155s)
+✔ [4185/4323] Built Eight.ViaGrouping.Bridge (14s)
+✔ [4186/4325] Built Eight.ViaGrouping.GridPsiDefs (7.8s)
+✔ [4187/4325] Built Eight.ViaGrouping.LevelDefs (7.8s)
+✔ [4188/4325] Built Eight.ViaGrouping.Table (20s)
+✔ [4189/4325] Built ClauseBound.Inst.HalfTab (10s)
+✔ [4190/4325] Built VariableBound.Paper.Rename.Code (5.4s)
+✔ [4191/4325] Built Eight.Level.SecPseudocode (6.0s)
+✔ [4192/4325] Built CircuitLowerBound.Oracle.Runs (7.9s)
+✔ [4193/4325] Built Eight.ViaGrouping.Keeps (40s)
+✔ [4194/4325] Built UniformInK.Tree.Defs (5.5s)
+✔ [4195/4325] Built ClauseBound.TopN.Walk (5.4s)
+✔ [4196/4325] Built GeneralPieces.DefGenPieces.Progs (7.1s)
+✔ [4197/4325] Built ClauseBound.TopN.EvalW (8.6s)
+✔ [4198/4325] Built ClauseBound.TopN.Budget (8.9s)
+✔ [4199/4326] Built ClausesOccurStatement (7.0s)
+✔ [4200/4326] Built ClauseBound.Gen.Rate (9.2s)
+✔ [4201/4326] Built GeneralPieces.Tied.Defs (6.3s)
+✔ [4202/4326] Built ClauseBound.Alg.CertTop (101s)
+✔ [4203/4326] Built PaddedDescent.F.CertEval (14s)
+✔ [4204/4326] Built Eight.Level.Presents (9.6s)
+✔ [4205/4326] Built Eight.Level.Cert (4.4s)
+✔ [4206/4326] Built Eight.Level.Arith (16s)
+✔ [4207/4326] Built Eight.SecCrossing_LemPieces (4.4s)
+✔ [4208/4326] Built ClauseBound.ParityChecks.CertLib (6.7s)
+✔ [4209/4326] Built CircuitLowerBound.Circ.Clause (289s)
+✔ [4210/4326] Built Eight.Cor.Width (22s)
+✔ [4211/4326] Built Eight.Level.Pieces (5.5s)
+✔ [4212/4327] Built Variance.Cov (5.8s)
+✔ [4213/4327] Built Eight.Cor.Defs (4.2s)
+✔ [4214/4327] Built CircuitLowerBound.Alg.Time (24s)
+✔ [4215/4327] Built Coding.Defs (5.7s)
+✔ [4216/4327] Built Exits.Tested (5.3s)
+✔ [4217/4327] Built Eight.ViaGrouping.Display (5.1s)
+✔ [4218/4327] Built Eight.ViaGrouping.AlgDefs (5.5s)
+✔ [4219/4327] Built ClauseBound.Inst.Half (6.8s)
+✔ [4220/4327] Built Eight.ViaGrouping.SatPsi (9.0s)
+✔ [4221/4328] Built ClauseBound.ParityChecks.NetDefs (4.7s)
+✔ [4222/4328] Built SparsificationLemma.Defs (4.0s)
+✔ [4223/4328] Built Eight.ViaGrouping.Main (14s)
+✔ [4224/4328] Built CircuitLowerBound.Oracle.Restart (6.4s)
+✔ [4225/4328] Built ClauseBound.TopN.Arith (5.0s)
+✔ [4226/4328] Built PiecesFromEightSquaresStatement (3.9s)
+✔ [4227/4328] Built Exits.Poly (4.8s)
+✔ [4228/4328] Built VariablesFixedWidthStatement (4.4s)
+✔ [4229/4328] Built GeneralPieces.Tied.BoundDefs (4.1s)
+✔ [4230/4329] Built PaddedDescent.F.CertA (4.5s)
+✔ [4231/4329] Built Eight.ViaGrouping.LevelCert (4.0s)
+✔ [4232/4329] Built Coding.Sets (5.1s)
+✔ [4233/4329] Built Eight.Cor.WidthProg (6.5s)
+✔ [4234/4329] Built Variance.Var (6.8s)
+✔ [4235/4329] Built Coding.Padding (5.9s)
+✔ [4236/4329] Built Eight.SecLevel_Grid (9.3s)
+✔ [4237/4329] Built Exits.Runs (6.1s)
+✔ [4238/4330] Built Eight.ViaGrouping.CorDefs2 (6.4s)
+✔ [4239/4330] Built Value.Defs (8.1s)
+✔ [4240/4330] Built ClauseBound.Inst.CertHalfSmall (20s)
+✔ [4241/4330] Built CircuitLowerBound.Closed (18s)
+✔ [4242/4330] Built ClauseBound.ParityChecks.ProgDefs (22s)
+✔ [4243/4330] Built VariableBound.Net.Defs (26s)
+✔ [4244/4330] Built SparsificationLemma.Cal.Defs (22s)
+✔ [4245/4330] Built ClauseBound.Inst.CertHalfTab (47s)
+✔ [4246/4331] Built Eight.ViaGrouping.LemGrouping (12s)
+✔ [4247/4331] Built ClauseBound.TopN.Gen (12s)
+✔ [4248/4331] Built PiecesCountedStatement (12s)
+✔ [4249/4331] Built ClauseBound.ParityChecks.CertNum (49s)
+✔ [4250/4331] Built Value.Sums (8.5s)
+✔ [4251/4331] Built PaddedDescent.F.CertNet (293s)
+✔ [4252/4331] Built Value.Words (6.0s)
+✔ [4253/4331] Built Variance.Grouping (15s)
+✔ [4254/4332] Built Eight.SecLevel_GridWords (14s)
+✔ [4255/4332] Built ClauseBound.TopN.ArithR (17s)
+✔ [4256/4332] Built CircuitLowerBound.Inf (9.1s)
+✔ [4257/4332] Built SparsificationLemma.Side (7.3s)
+✔ [4258/4332] Built ClauseBound.ParityChecks.ArithAux (10s)
+✔ [4259/4332] Built ClauseBound.ParityChecks.CertPar (8.7s)
+✔ [4260/4332] Built ClauseBound.ParityChecks.Sizes (10s)
+✔ [4261/4332] Built VariableBound.Count.Defs (9.2s)
+✔ [4262/4332] Built ClauseBound.ParityChecks.TopDefs (10s)
+✔ [4263/4332] Built Value.Blocks (9.0s)
+✔ [4264/4332] Built Eight.Level.Min (7.8s)
+✔ [4265/4332] Built ClauseBound.Inst.CertHalf (17s)
+✔ [4266/4332] Built Value.Clique (10s)
+✔ [4267/4332] Built Eight.ViaGrouping.LevelNet (14s)
+✔ [4268/4332] Built SparsificationLemma.One (16s)
+✔ [4269/4332] Built PaddedDescent.Col.CertG (27s)
+✔ [4270/4332] Built ClauseBound.ParityChecks.TopOL (19s)
+✔ [4271/4332] Built ClauseBound.ParityChecks.MasterOL (17s)
+✔ [4272/4332] Built ClauseBound.ParityChecks.BudgetOL (22s)
+✔ [4273/4336] Built Eight.Level.End (5.8s)
+✔ [4274/4336] Built ClauseBound.Both.Defs (11s)
+✔ [4275/4336] Built Value.Joint (13s)
+✔ [4276/4336] Built Eight.Cor.ENP (8.2s)
+✔ [4277/4336] Built Eight.Cor.Graph (11s)
+✔ [4278/4338] Built CountKSatRate.Cert (14s)
+✔ [4279/4338] Built ClauseBound.Alg.CertEnum (54s)
+✔ [4280/4338] Built Eight.SecProof_Proof (7.8s)
+✔ [4281/4338] Built UniformInK.Spars.Bound (7.5s)
+✔ [4282/4338] Built ClauseBound.ParityChecks.ArithOL (45s)
+✔ [4283/4338] Built Eight.ViaGrouping.GridPsi (54s)
+✔ [4284/4338] Built Eight.Cor.NSETH (15s)
+✔ [4285/4339] Built Eight.ViaGrouping.Level (25s)
+✔ [4286/4339] Built UniformInK.Spars.Step (10s)
+✔ [4287/4339] Built UniformInK.Top.Defs (8.5s)
+✔ [4288/4339] Built Value.End (6.5s)
+✔ [4289/4339] Built ClauseBound.Both.End (8.4s)
+✔ [4290/4340] Built Eight.ViaGrouping.CorGraph (7.4s)
+✔ [4291/4340] Built SparsificationLemma.Shrink (5.9s)
+✔ [4292/4340] Built ClauseBound.Both.TimeM (11s)
+✔ [4293/4340] Built SparsificationLemma.Bound (5.9s)
+✔ [4294/4340] Built Eight.ViaGrouping.Count (10s)
+✔ [4295/4340] Built SparsificationLemma.Len (5.5s)
+✔ [4296/4340] Built Eight.ViaGrouping.CorNSETH (7.2s)
+✔ [4297/4343] Built Eight.ViaGrouping.LevelEnd (6.2s)
+✔ [4298/4344] Built ClauseBound.TopN.Cert (15s)
+✔ [4299/4344] Built VariableBound.Top.Defs (7.9s)
+✔ [4300/4346] Built SparsificationLemma.Geo.Defs (7.6s)
+✔ [4301/4346] Built StepSparsify.Defs (9.9s)
+✔ [4302/4349] Built Eight.ViaGrouping.CorENP (7.0s)
+✔ [4303/4349] Built UniformInK.Spars.Thresholds (6.4s)
+✔ [4304/4353] Built SparsificationLemma.Iface (6.3s)
+✔ [4305/4354] Built UniformInK.Top.End (8.4s)
+✔ [4306/4354] Built Eight.ViaGrouping.Alg (9.6s)
+✔ [4307/4354] Built UniformInK.Top.Leaves (12s)
+✔ [4308/4354] Built UniformInK.Tree.Tree (10s)
+✔ [4309/4359] Built SparsificationLemma.Mach.Defs (11s)
+✔ [4310/4359] Built UniformInK.Spars.Iface (10s)
+✔ [4311/4359] Built SparsificationLemma.Gen (12s)
+✔ [4312/4359] Built ClauseBound.ParityChecks.CertOL (13s)
+✔ [4313/4373] Built VariableBound.Paper.Rename.End (8.0s)
+✔ [4314/4373] Built VariableBound.Paper.Decide (7.7s)
+✔ [4315/4373] Built UniformInK.Spars.Main (4.8s)
+✔ [4316/4373] Built Enumerate.Defs (8.3s)
+✔ [4317/4373] Built ClauseBound.ParityChecks.CertTopOL (21s)
+✔ [4318/4373] Built SparsificationLemma.Mach.Walk (8.8s)
+✔ [4319/4400] Built Coding.GridDefs (7.3s)
+✔ [4320/4400] Built Coding.OccLists (9.3s)
+✔ [4321/4400] Built VariableBound.Printed.TiedDefs (9.3s)
+✔ [4322/4400] Built ThreeSatOnTree.Defs (6.5s)
+✔ [4323/4400] Built UniformInK.Cert.Sparsify (14s)
+✔ [4324/4400] Built UniformInK.Top.Budget (16s)
+✔ [4325/4400] Built ClauseBound.MainBoth (8.5s)
+✔ [4326/4400] Built Suffices.Defs (9.9s)
+✔ [4327/4400] Built Printed.Absorb (6.7s)
+✔ [4328/4400] Built Coding.Grid (8.0s)
+✔ [4329/4400] Built ThreeSatPrinted.Defs (5.8s)
+✔ [4330/4400] Built UniformInK.Cert.Walk (5.5s)
+✔ [4331/4400] Built SparsifyThenCount.Defs (6.5s)
+✔ [4332/4400] Built Coding.OccLinks (7.5s)
+✔ [4333/4400] Built SparsificationLemma.Geo.Thr (7.8s)
+✔ [4334/4400] Built VariableBound.Paper.MainTheorem (9.2s)
+✔ [4335/4400] Built Exits.AlgDefs (7.7s)
+✔ [4336/4400] Built SparsificationLemma.Mach.Len (12s)
+✔ [4337/4400] Built SparsifyThenCount.PlanUsedDefs (7.7s)
+✔ [4338/4400] Built SparsificationLemma.Mach.Cert (8.7s)
+✔ [4339/4400] Built Suffices.Sizes (10s)
+✔ [4340/4400] Built Coding.Occ (10s)
+✔ [4341/4400] Built Wrap.Main (8.1s)
+✔ [4343/4400] Built Exits.Level (7.8s)
+✔ [4344/4400] Built SparsificationLemma.Geo.Tau (9.3s)
+✔ [4345/4400] Built Exits.Decides (10s)
+✔ [4346/4400] Built Printed.Programs (12s)
+✔ [4347/4400] Built Exits.Grouping (12s)
+✔ [4348/4400] Built Suffices.Total (23s)
+✔ [4349/4400] Built RecursionWithPieces.Defs (9.6s)
+✔ [4350/4400] Built SparsificationLemma.Mach.Main (9.7s)
+✔ [4351/4400] Built Suffices.Loop (9.5s)
+✔ [4352/4400] Built Exits.Count (11s)
+✔ [4353/4400] Built Coding.OccMore (14s)
+✔ [4354/4400] Built SparsificationLemma.Geo.S (11s)
+✔ [4355/4400] Built Printed.Close (11s)
+✔ [4356/4400] Built Printed.HandOver (12s)
+✔ [4357/4400] Built ExplicitCost.EntryDefs (12s)
+✔ [4358/4400] Built Printed.CodingDefs (8.1s)
+✔ [4359/4400] Built CountedRecursion.AnswersDefs (10s)
+✔ [4360/4400] Built PairsToBound.Defs (8.6s)
+✔ [4361/4400] Built SparsificationLemma.Geo.Eps (21s)
+✔ [4362/4400] Built Coding.OccTests (10s)
+✔ [4363/4400] Built Printed.GroupingProcs (9.6s)
+✔ [4364/4400] Built Printed.LevelPoly (8.7s)
+✔ [4365/4400] Built ExplicitCost.GroupingDefs (8.1s)
+✔ [4366/4400] Built SparsificationLemma.Mach.Full (13s)
+✔ [4367/4452] Built GivenStatement (8.3s)
+✔ [4368/4461] Built Suffices.Main (16s)
+✔ [4369/4461] Built CountedRecursion.GridProcedures (8.4s)
+✔ [4370/4461] Built Printed.Coding (9.1s)
+✔ [4371/4461] Built SparsificationLemma.TreeWalk.Walk (7.3s)
+✔ [4372/4461] Built Occ.Defs (5.5s)
+✔ [4373/4461] Built Enumerate.Enumeration (8.1s)
+✔ [4374/4461] Built SparsificationLemma.Mach.LemSparsification (9.4s)
+✔ [4375/4461] Built SplitSat.Defs (7.5s)
+✔ [4376/4461] Built FreeCode.Order (6.0s)
+✔ [4377/4461] Built SizeCircuit.Defs (5.9s)
+✔ [4378/4461] Built FreeCode.Random (7.3s)
+✔ [4379/4461] Built ThmCount.Defs (6.3s)
+✔ [4380/4461] Built Printed.Achievable (9.0s)
+✔ [4381/4461] Built ThreeSatOnTree.ThmEveryDelta (7.8s)
+✔ [4382/4461] Built CountedRecursion.SolverDefs (8.2s)
+✔ [4383/4461] Built Occ.Main (6.6s)
+✔ [4384/4461] Built SplitCount.Defs (6.0s)
+✔ [4385/4461] Built FreeCode.Defs (6.8s)
+✔ [4386/4461] Built SplitSat.Cert (5.8s)
+✔ [4387/4462] Built Enumerate.Named (9.1s)
+✔ [4388/4462] Built SplitSat.Leaf (6.8s)
+✔ [4389/4462] Built Complement.Defs (6.1s)
+✔ [4390/4462] Built SizeCircuit.CircuitDefs (5.2s)
+✔ [4391/4462] Built SizeCircuit.General (6.9s)
+✔ [4392/4462] Built SplitSat.Simulate (10s)
+✔ [4393/4462] Built Printed.GroupingPoly (56s)
+✔ [4394/4462] Built ThmCount.FrontEnd (10s)
+✔ [4395/4462] Built Printed.LevelNetworks (10s)
+✔ [4396/4462] Built ThreeSatPrinted.ThmEveryDelta (8.1s)
+✔ [4397/4462] Built SizeCircuit.SizedCert (14s)
+✔ [4398/4462] Built ThmCount.Rates (14s)
+✔ [4399/4462] Built Printed.GroupingEntry (16s)
+✔ [4400/4462] Built SplitCount.Cert (9.1s)
+✔ [4401/4462] Built Printed.Count (16s)
+✔ [4402/4462] Built SplitCount.Sizes (8.0s)
+✔ [4403/4466] Built SplitCount.Disjoint (9.9s)
+✔ [4404/4466] Built SplitCount.Width (5.2s)
+✔ [4405/4466] Built SplitCount.Tree (7.5s)
+✔ [4406/4466] Built CountedRecursion.RecursionDefs (18s)
+✔ [4407/4466] Built Exits.End (6.8s)
+✔ [4408/4466] Built SplitCount.Host (11s)
+✔ [4409/4466] Built FreeCode.Code (7.4s)
+✔ [4410/4466] Built Sat3Graph.Defs (5.9s)
+✔ [4411/4466] Built GeneralPieces.Group.CaseI (7.6s)
+✔ [4412/4466] Built Complement.Sets (6.6s)
+✔ [4413/4466] Built SizeCircuit.Compare (6.6s)
+✔ [4414/4466] Built SplitSat.Sizes (8.2s)
+✔ [4415/4466] Built SizeCircuit.Gamma (7.7s)
+✔ [4416/4466] Built SizeCircuit.Addition (7.9s)
+✔ [4417/4466] Built ThmCount.Main (6.7s)
+✔ [4418/4466] Built SplitSat.Procedure (7.6s)
+✔ [4419/4466] Built Printed.Proof (9.0s)
+✔ [4420/4466] Built SplitCount.StepOne (8.5s)
+✔ [4421/4466] Built SplitCount.Leaf (10s)
+✔ [4422/4466] Built Coding.SetForm (8.3s)
+✔ [4424/4466] Built CountedInstanceStatement (10.0s)
+✔ [4426/4466] Built Printed.GroupingRun (15s)
+✔ [4427/4466] Built ClauseBound.Group.Sample (13s)
+✔ [4428/4466] Built FreeCode.Reader (7.5s)
+✔ [4429/4466] Built Printed.LevelCost (22s)
+✔ [4430/4466] Built FreeCode.Behind (10s)
+✔ [4431/4466] Built Sat3Graph.Split (7.2s)
+✔ [4432/4466] Built SizeCircuit.Sized (6.9s)
+✔ [4433/4466] Built Sat3Graph.Host (9.2s)
+✔ [4434/4466] Built SizeCircuit.Circuit (6.2s)
+✔ [4435/4470] Built Complement.Readers (13s)
+✔ [4436/4470] Built Printed.Grouping (7.3s)
+✔ [4437/4470] Built Sat3Graph.Cert (17s)
+✔ [4438/4470] Built SplitSat.Walk (15s)
+✔ [4439/4471] Built ClauseBound.Group.Grouping (10s)
+✔ [4440/4471] Built FreeCode.ReaderCert (13s)
+✔ [4441/4471] Built Sat3Graph.Ask (7.5s)
+✔ [4442/4473] Built Printed.LevelSentences (9.4s)
+✔ [4443/4473] Built SplitCount.Suffices (16s)
+✔ [4444/4473] Built Sat3Graph.Coloring (8.7s)
+✔ [4445/4473] Built Complement.FromGamma (7.2s)
+✔ [4446/4473] Built GeneralPieces.Rec.Chain (11s)
+✔ [4447/4473] Built SplitSat.Reader (13s)
+✔ [4448/4473] Built GeneralPieces.Rec.Descend (15s)
+✔ [4449/4473] Built Complement.Main (18s)
+✔ [4450/4474] Built GeneralPieces.Num.PartAUse (20s)
+✔ [4451/4475] Built FreeCode.Brute (18s)
+✔ [4452/4475] Built Sat3Graph.Sets (8.6s)
+✔ [4453/4476] Built GeneralPieces.Group.CaseII (23s)
+✔ [4454/4477] Built SplitCount.Main (6.6s)
+✔ [4455/4478] Built Printed.LevelFrom (9.2s)
+✔ [4456/4479] Built Sat3Graph.Dominating (21s)
+✔ [4457/4479] Built PaddedDescent.F.Expand (6.1s)
+✔ [4458/4479] Built SplitSat.Main (9.8s)
+✔ [4459/4480] Built PaddedDescent.F.MarkSums (8.5s)
+✔ [4460/4480] Built SizeCircuit.Cert (52s)
+✔ [4461/4480] Built PaddedDescent.F.MarkCode (8.3s)
+✔ [4462/4481] Built Printed.End (10s)
+✔ [4463/4481] Built Given.Networks (10s)
+✔ [4464/4481] Built GeneralPieces.Group.Lemma (15s)
+✔ [4465/4481] Built PaddedDescent.F.MarkSum (8.1s)
+✔ [4466/4481] Built FreeCode.Tied (10s)
+✔ [4467/4481] Built Sat3Graph.Main (9.5s)
+✔ [4468/4483] Built PaddedDescent.F.MarkSize (11s)
+✔ [4469/4485] Built PaddedDescent.F.MarkVal (17s)
+✔ [4470/4488] Built SizeCircuit.Main (9.6s)
+✔ [4471/4488] Built PaddedDescent.F.MarkLayers (15s)
+✔ [4472/4494] Built PaddedDescent.F.Eval (11s)
+✔ [4473/4496] Built PaddedDescent.Threshold (5.5s)
+✔ [4474/4497] Built PaddedDescent.F.ArithCol (5.7s)
+✔ [4476/4502] Built FreeCode.Main (8.3s)
+✔ [4477/4503] Built GeneralPieces.Rec.Rate (35s)
+✔ [4478/4503] Built GeneralPieces.Rec.Level (11s)
+✔ [4479/4503] Built PaddedDescent.F.ArithTop (8.3s)
+✔ [4480/4505] Built PaddedDescent.F.ArithLevel (10s)
+✔ [4481/4506] Built PaddedDescent.F.ArithStack (8.6s)
+✔ [4482/4506] Built Given.Level (18s)
+✔ [4483/4506] Built GeneralPieces.Trim.Prog (7.2s)
+✔ [4484/4506] Built GeneralPieces.Top.CaseI (14s)
+✔ [4485/4506] Built GeneralPieces.Rec.Seq (12s)
+✔ [4486/4506] Built PaddedDescent.F.ArithInv (14s)
+✔ [4487/4506] Built ClauseBound.TopN.End (12s)
+✔ [4488/4508] Built PaddedDescent.F.ArithMark (13s)
+✔ [4489/4508] Built GeneralPieces.Top.EndM (15s)
+✔ [4490/4508] Built ClauseBound.ParityChecks.Ev (7.8s)
+✔ [4491/4510] Built PaddedDescent.F.ArithSched (16s)
+✔ [4492/4512] Built GeneralPieces.Trim.Cert (5.3s)
+✔ [4493/4512] Built PaddedDescent.F.ArithGlob (4.6s)
+✔ [4494/4513] Built PaddedDescent.F.ArithFits (5.0s)
+✔ [4495/4513] Built Given.End (9.0s)
+✔ [4497/4517] Built GeneralPieces.Rec.PartB (7.8s)
+✔ [4498/4517] Built ClauseBound.ParityChecks.Dummy (5.5s)
+✔ [4499/4517] Built ClauseBound.ParityChecks.Congr (8.9s)
+✔ [4500/4519] Built GeneralPieces.DefGenPieces.Conv (9.1s)
+✔ [4501/4519] Built ClauseBound.ParityChecks.Approx (11s)
+✔ [4502/4522] Built ClauseBound.ParityChecks.EndOL (14s)
+✔ [4503/4522] Built ClauseBound.ParityChecks.StepOne (5.7s)
+✔ [4504/4524] Built ClauseBound.ParityChecks.Shape (14s)
+✔ [4505/4524] Built ClauseBound.ParityChecks.BridgeInc (8.8s)
+✔ [4506/4524] Built ClauseBound.ParityChecks.Martingale (5.0s)
+✔ [4507/4525] Built PaddedDescent.F.ArithTopInv (19s)
+✔ [4508/4526] Built ClauseBound.ParityChecks.Structure (6.5s)
+✔ [4509/4526] Built GeneralPieces.DefGenPieces.MayAssume (13s)
+✔ [4510/4527] Built ClauseBound.ParityChecks.Start (10s)
+✔ [4511/4538] Built ClauseBound.ParityChecks.Bridge (6.4s)
+✔ [4519/4539] Built ClauseBound.ParityChecks.Num (11s)
+✔ [4520/4540] Built PaddedDescent.F.ArithA (5.5s)
+✔ [4521/4540] Built UniformInK.Top.FallBack (8.8s)
+✔ [4522/4549] Built GeneralPieces.Ring.Defs (6.1s)
+✔ [4530/4554] Built ClauseBound.ParityChecks.ChoiceByPotential (5.3s)
+✔ [4531/4554] Built GeneralPieces.Num.TopDisplay (55s)
+✔ [4532/4567] Built PaddedDescent.Main (5.4s)
+✔ [4533/4567] Built ClauseBound.Boson.Text (8.6s)
+✔ [4534/4587] Built ClauseBound.Part.Upper (11s)
+✔ [4538/4587] Built GeneralPieces.GenF.Exp (10s)
+✔ [4539/4587] Built GeneralPieces.Series.Rings (10s)
+✔ [4540/4587] Built GeneralPieces.GenF.Hahn (9.2s)
+✔ [4541/4587] Built GeneralPieces.Num.PartD (9.5s)
+✔ [4542/4590] Built GeneralPieces.DefGenPieces.ToPure (11s)
+✔ [4543/4590] Built GeneralPieces.Ring.Bridge (17s)
+✔ [4544/4594] Built GeneralPieces.Series.Expansion (10s)
+✔ [4545/4595] Built ClauseBound.ParityChecks.Run (26s)
+✔ [4546/4596] Built GeneralPieces.GenF.Taylor (13s)
+✔ [4547/4602] Built GeneralPieces.Group.Calls (15s)
+✔ [4548/4606] Built ClauseBound.Boson.HalfList (8.9s)
+✔ [4549/4608] Built GeneralPieces.Ring.Basic (11s)
+✔ [4550/4608] Built GeneralPieces.GenF.PDeriv (8.5s)
+✔ [4551/4608] Built GeneralPieces.Series.OneLaurent (10s)
+✔ [4552/4608] Built ClauseBound.ParityChecks.RunF (9.3s)
+✔ [4553/4608] Built GeneralPieces.Series.Deriv (21s)
+✔ [4554/4608] Built ClauseBound.Inst.HalfTabSpec (9.7s)
+✔ [4555/4611] Built ClauseBound.Inst.HalfIfc (9.5s)
+✔ [4556/4611] Built GeneralPieces.GenF.Coeff (4.3s)
+✔ [4557/4611] Built GeneralPieces.Ring.Lex (8.0s)
+✔ [4558/4611] Built GeneralPieces.Ring.LemmaQ (9.3s)
+✔ [4559/4611] Built GeneralPieces.Ring.OpFacts (9.8s)
+✔ [4560/4611] Built GeneralPieces.Series.ReadOff (9.1s)
+✔ [4561/4611] Built ClauseBound.Inst.HalfTabBot (6.0s)
+✔ [4562/4611] Built GeneralPieces.GenF.Defs (9.1s)
+✔ [4563/4611] Built ClauseBound.ParityChecks.Count (11s)
+✔ [4564/4611] Built ClauseBound.Inst.HalfTabKF (7.5s)
+✔ [4565/4611] Built ClauseBound.Inst.HalfLabs (6.5s)
+✔ [4566/4611] Built ClauseBound.Inst.HalfVal (7.9s)
+✔ [4567/4611] Built GeneralPieces.GenF.Borel (4.1s)
+✔ [4568/4611] Built ClauseBound.Inst.HalfEnc (6.1s)
+✔ [4569/4611] Built ClauseBound.Inst.HalfSpec (6.5s)
+✔ [4570/4611] Built UniformInK.Top.Correct (6.2s)
+✔ [4571/4611] Built ClauseBound.Inst.HalfFact (13s)
+✔ [4572/4613] Built GeneralPieces.Series.Constant (6.9s)
+✔ [4573/4613] Built ClauseBound.Part.Lower (59s)
+✔ [4574/4613] Built GeneralPieces.Ring.Pieces (7.0s)
+✔ [4575/4613] Built GeneralPieces.Ring.Op (8.5s)
+✔ [4576/4613] Built GeneralPieces.GenF.Products (7.8s)
+✔ [4577/4613] Built GeneralPieces.GenF.Kappa (9.8s)
+✔ [4578/4614] Built GeneralPieces.GenF.Bra (11s)
+✔ [4579/4614] Built GeneralPieces.Series.LemmaQ (7.6s)
+✔ [4580/4617] Built GeneralPieces.ThmRunningTime (8.6s)
+✔ [4581/4617] Built VariableBound.Top.Correct (7.9s)
+✔ [4582/4617] Built VariableBound.Top.CorrectB (5.9s)
+✔ [4583/4617] Built ClauseBound.Inst.HalfPad (9.6s)
+✔ [4584/4617] Built ClauseBound.Part.Bounds (6.5s)
+✔ [4585/4617] Built GeneralPieces.Half.List (11s)
+✔ [4586/4617] Built GeneralPieces.GenF.DDComm (13s)
+✔ [4587/4617] Built GeneralPieces.Ring.Sizes (16s)
+✔ [4588/4619] Built GeneralPieces.Ring.Dual (17s)
+✔ [4589/4619] Built GeneralPieces.GenF.NormalL (16s)
+✔ [4590/4619] Built GeneralPieces.GenF.Assemble (18s)
+✔ [4591/4619] Built GeneralPieces.GenF.YY (16s)
+✔ [4592/4619] Built VariableBound.Net.CertEv (13s)
+✔ [4593/4619] Built UniformInK.Cert.Top (6.0s)
+✔ [4594/4619] Built RecursionWithPieces.Master (9.2s)
+✔ [4595/4620] Built SparsifyThenCount.CorrectB (6.1s)
+✔ [4596/4620] Built SparsifyThenCount.Correct (7.9s)
+✔ [4597/4620] Built ClauseBound.Inst.HalfPar (6.8s)
+✔ [4598/4620] Built ClauseBound.Boson.Final (7.2s)
+✔ [4599/4620] Built GeneralPieces.Half.Order (6.5s)
+✔ [4600/4621] Built UniformInK.Cert.Both (6.6s)
+✔ [4601/4621] Built SparsifyThenCount.Tied (8.6s)
+✔ [4602/4624] Built GeneralPieces.GenF.Y2 (16s)
+✔ [4603/4624] Built VariableBound.Cert.Top (12s)
+✔ [4604/4627] Built ClauseBound.Inst.HalfAll (10s)
+✔ [4605/4627] Built GeneralPieces.GenF.Normal (17s)
+✔ [4606/4627] Built VariableBound.StepParity (4.7s)
+✔ [4607/4630] Built VariableBound.Printed.Tied (9.0s)
+✔ [4608/4633] Built UniformInK.Top.Time (9.2s)
+✔ [4609/4634] Built GeneralPieces.Ring.Bits (24s)
+✔ [4610/4634] Built SparsifyThenCount.CertTop (8.4s)
+✔ [4611/4635] Built VariableBound.Family.Pairwise (7.8s)
+✔ [4612/4635] Built VariableBound.Family.SmallBias (5.8s)
+✔ [4613/4635] Built VariableBound.Field.Alg (5.2s)
+✔ [4614/4637] Built VariableBound.Field.Transfer (5.5s)
+✔ [4615/4638] Built VariableBound.Params.Spec (6.3s)
+✔ [4616/4638] Built GeneralPieces.GenF.Commute (57s)
+✔ [4617/4638] Built GeneralPieces.Ring.ThmHalfPieces (11s)
+✔ [4618/4638] Built VariableBound.Family.Main (7.6s)
+✔ [4619/4640] Built VariableBound.Field.Quot (6.7s)
+✔ [4620/4640] Built VariableBound.Field.Ring (7.4s)
+✔ [4621/4641] Built SparsifyThenCount.CertBoth (15s)
+✔ [4622/4641] Built VariableBound.Top.Time (19s)
+✔ [4623/4643] Built VariableBound.Params.Cert (8.2s)
+✔ [4624/4643] Built ClauseBound.ParityChecks.Binom (12s)
+✔ [4625/4646] Built GeneralPieces.Half.Size (13s)
+✔ [4626/4647] Built VariableBound.Field.Search (9.0s)
+✔ [4627/4648] Built GeneralPieces.GenF.Y (52s)
+✔ [4628/4648] Built VariableBound.StepChoice (12s)
+✔ [4629/4648] Built GeneralPieces.Half.Consts (14s)
+✔ [4630/4651] Built VariableBound.Field.Cert (30s)
+✔ [4631/4652] Built VariableBound.Net.Rank (12s)
+✔ [4632/4652] Built GeneralPieces.GenF.YMain (8.0s)
+✔ [4633/4655] Built VariableBound.Net.Basic (9.2s)
+✔ [4634/4657] Built VariableBound.Net.Total (8.4s)
+✔ [4635/4657] Built VariableBound.Field.Family (10s)
+✔ [4636/4657] Built VariableBound.Params.Ineq (13s)
+✔ [4637/4657] Built VariableBound.Search.Correct (9.5s)
+✔ [4638/4657] Built GeneralPieces.GenF.Main (6.7s)
+✔ [4639/4657] Built VariableBound.Net.CertRank (10s)
+✔ [4640/4658] Built VariableBound.Net.Tests (10s)
+✔ [4641/4659] Built VariableBound.Net.Fit (11s)
+✔ [4642/4659] Built VariableBound.Net.SizeB (10s)
+✔ [4643/4659] Built VariableBound.Net.Tuples (10s)
+✔ [4644/4660] Built GeneralPieces.Half.Spec (17s)
+✔ [4645/4660] Built VariableBound.Net.Prof (11s)
+✔ [4646/4660] Built VariableBound.Net.Ev (9.5s)
+✔ [4647/4660] Built GeneralPieces.Half.Main (8.1s)
+✔ [4648/4660] Built VariableBound.Net.SizeP (11s)
+✔ [4649/4662] Built VariableBound.Net.Val (20s)
+✔ [4650/4662] Built VariableBound.Count.Correct (15s)
+✔ [4651/4666] Built VariableBound.Top.Budget (6.5s)
+✔ [4652/4673] Built VariableBound.Net.SizeU (19s)
+✔ [4653/4676] Built GeneralPieces.Tied.Bound (6.3s)
+✔ [4654/4676] Built VariableBound.Net.SizeSmall (6.7s)
+✔ [4655/4678] Built UniformInK.Top.ArithDefs (6.5s)
+✔ [4656/4678] Built UniformInK.Tree.Stack (4.8s)
+✔ [4657/4678] Built UniformInK.Top.CorrectB (6.3s)
+✔ [4658/4679] Built GeneralPieces.Main (6.6s)
+✔ [4659/4679] Built VariableBound.Printed.VariablesA.Level (5.5s)
+✔ [4660/4679] Built UniformInK.Top.ArithTop (6.6s)
+✔ [4661/4679] Built UniformInK.Top.ArithNat (8.2s)
+✔ [4662/4683] Built VariableBound.Count.Cert (33s)
+✔ [4663/4683] Built StepSparsify.Walk (9.1s)
+✔ [4664/4683] Built UniformInK.Top.ArithMaster (17s)
+✔ [4665/4694] Built VariableBound.Top.ArithDefs (12s)
+✔ [4666/4694] Built VariableBound.Printed.VariablesA.Arith (10s)
+✔ [4667/4694] Built StepSparsify.CertWalk (12s)
+✔ [4668/4694] Built SparsificationLemma.Cal.Beta (9.3s)
+✔ [4669/4694] Built VariableBound.Search.Cert (47s)
+✔ [4670/4696] Built SparsificationLemma.Cal.Real (14s)
+✔ [4671/4696] Built StepSparsify.WalkCount (10s)
+✔ [4672/4696] Built VariableBound.Top.ArithPlan (8.9s)
+✔ [4673/4696] Built VariableBound.Top.ArithTop (13s)
+✔ [4674/4696] Built VariableBound.Paper.Forms (8.6s)
+✔ [4675/4697] Built SparsificationLemma.Cal.Thr (7.9s)
+✔ [4676/4724] Built VariableBound.Printed.VariablesA.Main (10s)
+✔ [4677/4724] Built SparsificationLemma.StepSparsifyDefs (9.8s)
+✔ [4678/4724] Built VariableBound.Top.ArithNeed (20s)
+✔ [4679/4724] Built Consequences.Defs (7.7s)
+✔ [4680/4724] Built SparsificationLemma.Cal.Facts (10s)
+✔ [4681/4724] Built PrintedOrder.Defs (7.0s)
+✔ [4682/4724] Built SparsificationLemma.Cal.Alpha (20s)
+✔ [4683/4724] Built FromPrinted.CountDefs (8.9s)
+✔ [4684/4724] Built VariableBound.Top.ArithNat (30s)
+✔ [4685/4724] Built SparsificationLemma.Nodes (9.4s)
+✔ [4686/4724] Built FromPrinted.SatDefs (9.6s)
+✔ [4687/4724] Built Consequences.Sets (6.4s)
+✔ [4688/4724] Built SparsificationLemma.Cal.Main (7.2s)
+✔ [4689/4724] Built PrintedOrder.AddUp (6.9s)
+✔ [4690/4724] Built PrintedOrder.Deciding (6.4s)
+✔ [4691/4724] Built FromPrinted.GraphDefs (6.3s)
+✔ [4692/4724] Built FromPrinted.Count (7.3s)
+✔ [4693/4724] Built SparsificationLemma.Sketch (4.7s)
+✔ [4694/4724] Built VariableBound.Top.Arith (6.2s)
+✔ [4695/4724] Built StepSparsify.CalNumbers (11s)
+✔ [4696/4724] Built FromPrinted.Core (7.4s)
+✔ [4697/4724] Built SparsificationLemma.StepSparsify (5.3s)
+✔ [4698/4724] Built PrintedOrder.Counting (6.9s)
+✔ [4699/4724] Built StepSparsify.CertThCal (46s)
+✔ [4700/4724] Built FromPrinted.Sets (9.4s)
+✔ [4701/4724] Built StepSparsify.CalLeaves (11s)
+✔ [4702/4724] Built Consequences.Dom (13s)
+✔ [4703/4724] Built FromPrinted.SplitSat (9.9s)
+✔ [4704/4724] Built SparsificationLemma.Main (6.6s)
+✔ [4705/4823] Built FromPrinted.Sat3Graph (11s)
+✔ [4706/4823] Built FromPrinted.FreeCode (11s)
+✔ [4707/4823] Built Consequences.Main (5.9s)
+✔ [4708/4823] Built ThmCount.MEps (10s)
+✔ [4709/4823] Built StepSparsify.CalServes (9.2s)
+✔ [4711/4823] Built GeneralPieces.Num.Remarks (6.0s)
+✔ [4712/4823] Built FromPrinted.Dom (10s)
+✔ [4713/4823] Built FromPrinted.Verifier (7.6s)
+✔ [4714/4823] Built VariableBound.Paper.Rename.Compact (10s)
+✔ [4715/4823] Built PiecesCounted.Basic (9.2s)
+✔ [4716/4823] Built OccurM.Arith (10s)
+✔ [4717/4823] Built PiecesCounted.PaddedData (8.0s)
+✔ [4718/4823] Built ExplicitCost.Mirror (8.8s)
+✔ [4719/4823] Built PiecesFromEightSquares.LemPieces (11s)
+✔ [4720/4823] Built CountedToPadded.Defs (6.6s)
+✔ [4721/4823] Built ExplicitCost.GroupingNumbers (10s)
+✔ [4722/4823] Built CountedRecursion.SquareGrid (7.4s)
+✔ [4723/4823] Built CountedToPadded.Compare (11s)
+✔ [4724/4823] Built CountedRecursion.Answers (8.3s)
+✔ [4725/4823] Built CountedRecursion.Numbers (9.9s)
+✔ [4726/4823] Built CountedRecursion.CrudeBounds (10s)
+✔ [4727/4823] Built CountedRecursion.PolyLists (17s)
+✔ [4728/4823] Built CountedRecursion.EndBounds (13s)
+✔ [4729/4823] Built CountedRecursion.PartAPrinted (7.6s)
+✔ [4730/4823] Built CountedToPadded.GenLevels (22s)
+✔ [4731/4823] Built OccurM.TiedDefs (5.4s)
+✔ [4732/4823] Built FromPrinted.Circuits (7.9s)
+✔ [4733/4823] Built PiecesCounted.Oracle (7.6s)
+✔ [4734/4823] Built PiecesCounted.Sizes (9.8s)
+✔ [4735/4823] Built ExplicitCost.Poly (38s)
+✔ [4736/4823] Built GeneralPieces.Rec.Count (15s)
+✔ [4737/4823] Built CountedToPadded.Pick (6.7s)
+✔ [4738/4823] Built ExplicitCost.SameRuns (9.4s)
+✔ [4739/4823] Built CountedToPadded.TablesValue (11s)
+✔ [4740/4823] Built CountedToPadded.Tables (11s)
+✔ [4741/4823] Built OccurM.ArithBack (21s)
+✔ [4742/4823] Built CountedRecursion.GridLemmas (14s)
+✔ [4743/4823] Built CountedRecursion.CliqueReads (14s)
+✔ [4744/4823] Built VariableBound.Net.CertNet (168s)
+✔ [4745/4823] Built CountedRecursion.PolyRules (9.3s)
+✔ [4746/4823] Built CountedToPadded.Need (22s)
+✔ [4747/4823] Built CountedRecursion.Within (8.8s)
+✔ [4748/4823] Built CountedRecursion.LevelNumbers (9.6s)
+✔ [4749/4823] Built OccurM.Prep (6.3s)
+✔ [4750/4823] Built CountedRecursion.EndPlugged (8.6s)
+✔ [4751/4823] Built PiecesCounted.PadThen (11s)
+✔ [4752/4823] Built OccurM.AllOccur (7.0s)
+✔ [4753/4823] Built ExplicitCost.Cost (11s)
+✔ [4754/4823] Built CountedRecursion.CallParts (11s)
+✔ [4755/4823] Built CountedRecursion.PolyQueries (27s)
+✔ [4756/4823] Built CountedRecursion.EndCounted (11s)
+✔ [4757/4823] Built CountedRecursion.PatternPsi (17s)
+✔ [4758/4823] Built CountedRecursion.EndSolves (9.5s)
+✔ [4759/4823] Built VariableBound.Net.Main (10s)
+✔ [4760/4823] Built CountedToPadded.Levels (10s)
+✔ [4761/4823] Built CountedToPadded.RunFor (54s)
+✔ [4762/4823] Built PiecesCounted.Trimmed (39s)
+✔ [4763/4823] Built OccurM.Top (7.9s)
+✔ [4764/4823] Built CountedRecursion.Brute (11s)
+✔ [4765/4823] Built CountedRecursion.ChainLabel (13s)
+✔ [4766/4823] Built CountedToPadded.SolverPoly (44s)
+✔ [4767/4823] Built PiecesCounted.Padded (11s)
+✔ [4768/4823] Built ExplicitCost.GroupingSearch (13s)
+✔ [4769/4823] Built CountedRecursion.SolverStages (26s)
+✔ [4770/4823] Built CountedRecursion.ParentSize (12s)
+✔ [4771/4823] Built ExplicitCost.GroupingPoly (57s)
+✔ [4772/4823] Built CountedRecursion.PolySolverData (8.6s)
+✔ [4773/4823] Built CountedRecursion.CaseTwo (8.5s)
+✔ [4774/4823] Built CountedRecursion.PolyProcedure (10s)
+✔ [4775/4823] Built CountedRecursion.CallLemma (13s)
+✔ [4776/4823] Built CountedRecursion.Expansion (10s)
+✔ [4777/4823] Built OccurM.Wrapper (5.5s)
+✔ [4778/4823] Built VariableBound.MainPrinted (6.5s)
+✔ [4779/4823] Built OccurM.Main (6.3s)
+✔ [4780/4823] Built CountedRecursion.PatternValues (9.2s)
+✔ [4781/4823] Built CountedRecursion.Totals (8.4s)
+✔ [4782/4823] Built PiecesCounted.Assume (7.6s)
+✔ [4783/4823] Built CountedRecursion.Base (7.6s)
+✔ [4784/4823] Built CountedToPadded.Main (4.6s)
+✔ [4785/4823] Built PiecesCounted.EightSquare (6.5s)
+✔ [4786/4823] Built CountedRecursion.PolySolver (6.4s)
+✔ [4787/4823] Built CountedRecursion.SolverPattern (8.5s)
+✔ [4788/4823] Built CountedRecursion.Chain (11s)
+✔ [4789/4823] Built ExplicitCost.GroupingCall (9.2s)
+✔ [4790/4823] Built CountedRecursion.CallFacts (7.5s)
+✔ [4791/4823] Built SparsifyThenCount.Main (6.0s)
+✔ [4792/4823] Built CountedRecursion.LabelCrude (9.8s)
+✔ [4793/4823] Built CountedRecursion.PolyEnd (6.2s)
+✔ [4794/4823] Built CountedRecursion.PatternIs (11s)
+✔ [4795/4823] Built CountedRecursion.TotalRoom (8.1s)
+✔ [4796/4823] Built CountedRecursion.SolverCall (10s)
+✔ [4797/4823] Built CountedRecursion.Meets (12s)
+✔ [4798/4823] Built CountedRecursion.ChildIsGood (7.6s)
+✔ [4799/4863] Built ExplicitCost.GroupingLemma (11s)
+✔ [4800/4863] Built CountedRecursion.LevelBound (12s)
+✔ [4801/4863] Built CountedRecursion.PolyAll (6.8s)
+✔ [4802/4863] Built CountedRecursion.ProcedureCost (7.4s)
+✔ [4803/4863] Built SparsifyThenCount.PlanUsed (9.0s)
+✔ [4804/4863] Built CountedRecursion.ParentNumbers (6.9s)
+✔ [4805/4863] Built VariableBound.Net.StepCost (5.6s)
+✔ [4806/4863] Built VariableBound.Field.Main (5.9s)
+✔ [4807/4863] Built PiecesCounted.Half (30s)
+✔ [4808/4863] Built CountedRecursion.SolverRoom (12s)
+✔ [4809/4863] Built RecursionToBound.Defs (8.6s)
+✔ [4810/4863] Built PairsToBound.Width (7.0s)
+✔ [4811/4863] Built VariableBound.Printed.VariablesA.StepSparsify (11s)
+✔ [4812/4863] Built CountedRecursion.CountBase (10s)
+✔ [4813/4863] Built PairsToBound.Pairs (13s)
+✔ [4814/4863] Built CountedRecursion.RoomWithin (14s)
+✔ [4815/4863] Built RecursionWithPieces.Main (9.4s)
+✔ [4816/4863] Built CountedRecursion.RowWeightRun (11s)
+✔ [4817/4863] Built CountedRecursion.SolverStep (12s)
+✔ [4818/4863] Built ThmVariables.Defs (9.7s)
+✔ [4819/4863] Built FixedWidthSteps.RouteDefs (6.9s)
+✔ [4820/4863] Built RecursionToBound.Cert.Numbers (9.1s)
+✔ [4821/4863] Built RecursionToBound.Tree (8.1s)
+✔ [4822/4863] Built PairsToBound.Exhaust (8.9s)
+✔ [4823/4863] Built PairsToBound.FrontEnd (11s)
+✔ [4824/4863] Built RecursionWithPieces.Forms (7.5s)
+✔ [4825/4863] Built CountedInstance.Pairs (10s)
+✔ [4826/4863] Built CountedRecursion.RowPairRun (8.5s)
+✔ [4827/4863] Built PairsToBound.Arith (13s)
+✔ [4828/4863] Built CountedRecursion.CountStep (30s)
+✔ [4829/4863] Built FixedWidthSteps.Sentence (7.2s)
+✔ [4830/4863] Built FixedWidthSteps.Hypothesis (5.8s)
+✔ [4831/4863] Built FixedWidthSteps.Small (6.3s)
+✔ [4832/4863] Built FixedWidthSteps.Numbers (9.3s)
+✔ [4833/4863] Built RecursionToBound.Guard (7.5s)
+✔ [4834/4881] Built PrintedOrder.Close (6.6s)
+✔ [4835/4881] Built VariableBound.Printed.VariablesA.Setting (22s)
+✔ [4836/4881] Built RecursionToBound.Correct (10s)
+✔ [4837/4918] Built ThmCount.Remark (7.7s)
+✔ [6198/6295] Built PairsToBound.Main (10s)
+✔ [6843/6944] Built CountedRecursion.RowFactorRun (11s)
+✔ [7180/7234] Built MinOfBounds.Defs (7.5s)
+✔ [7194/7236] Built VariableBound.Printed.ThmVariablesA (7.9s)
+✔ [7197/7249] Built CountedRecursion.TotalCount (13s)
+✔ [8211/8273] Built MainRoute.Defs (6.9s)
+✔ [8237/8277] Built MinOfBounds.Arith (7.6s)
+✔ [8433/8493] Built MinOfBounds.Rename (8.4s)
+✔ [9644/9687] Built CountedRecursion.BothNetworks (14s)
+✔ [9699/9743] Built MainRoute.GeneralDefs (7.1s)
+✔ [9710/9754] Built MinOfBounds.Main (7.3s)
+✔ [9730/9768] Built RecursionToBound.Numbers (23s)
+✔ [9731/9768] Built MainRoute.EveryMachine (11s)
+✔ [9732/9768] Built FixedWidthSteps.Absorb (17s)
+✔ [9733/9768] Built CountedRecursion.Main (5.8s)
+✔ [9735/9768] Built MainRoute.General (6.0s)
+✔ [9736/9768] Built NamesInOrder.Defs (6.1s)
+✔ [9737/9768] Built RecursionToBound.Cert.Thresholds (42s)
+✔ [9738/9768] Built FixedWidthSteps.Choice (11s)
+✔ [9739/9768] Built ThmVariables.Bound (14s)
+✔ [9740/9768] Built CountedRoute.Defs (13s)
+✔ [9741/9768] Built CountedInstance.Main (13s)
+✔ [9742/9768] Built MainResults (20s)
+✔ [9744/9768] Built MainRoute.GeneralInM (20s)
+✔ [9745/9768] Built NamesInOrder.General (10s)
+✔ [9746/9768] Built ThmVariables.PartA (7.9s)
+✔ [9747/9768] Built RecursionToBound.Cert.Exponent (10s)
+✔ [9748/9768] Built NamesInOrder.Arith (16s)
+✔ [9749/9768] Built ThmVariables.EveryMachine (3.6s)
+✔ [9750/9768] Built RecursionToBound.Cert.Top (3.9s)
+✔ [9751/9768] Built RecursionToBound.OneOutput (28s)
+⚠ [9752/9768] Built Challenge (10s)
+warning: Challenge.lean:12:8: declaration uses `sorry`
+warning: Challenge.lean:16:8: declaration uses `sorry`
+✔ [9754/9768] Built RecursionToBound.Exponent (14s)
+✔ [9755/9768] Built RecursionToBound.End (8.3s)
+✔ [9756/9768] Built RecursionToBound.Main (3.0s)
+✔ [9757/9768] Built FixedWidthSteps.Main (3.5s)
+✔ [9758/9768] Built MainRoute.GeneralMain (3.5s)
+✔ [9759/9768] Built ThmVariables.Main (3.7s)
+✔ [9761/9768] Built NamesInOrder.Chain (4.6s)
+✔ [9762/9768] Built NamesInOrder.Main (3.4s)
+✔ [9763/9768] Built CountedRoute.Main (4.6s)
+✔ [9765/9768] Built Solution (7.2s)
+✔ [9767/9768] Built PaperIndex (8.9s)
+Build completed successfully (9768 jobs).
+=============== 2026-10-30T21:16:23-03:00 etapa 7 PrintAxioms: as duas declaracoes tem de listar os tres axiomas padrao
+'MainResults.ethIsFalse' depends on axioms: [propext, Classical.choice, Quot.sound]
+'MainResults.mainTheorem' depends on axioms: [propext, Classical.choice, Quot.sound]
+=============== 2026-10-30T21:16:33-03:00 etapa 8 a verificacao COMPLETA deles: comparator + nanoda + landrun (o segundo kernel)
+project /root/eth_anthropic/formal-math/eth, toolchain leanprover/lean4:v4.33.1, configurations: comparator.json
+== comparator @ 575674928e239f5bc452aab72d1dd7b0f1326494
+info: downloading https://releases.lean-lang.org/lean4/v4.34.0-rc1/lean-4.34.0-rc1-linux.tar.zst
+info: installing /root/.elan/toolchains/leanprover--lean4---v4.34.0-rc1
+info: lean4export: cloning https://github.com/leanprover/lean4export
+info: lean4export: checking out revision 'b18d673bd29b476466a51a3be1012df2ed322b10'
+✔ [1/4] Built Comparator.Util (455ms)
+✔ [5/16] Built Comparator.Util:c.o (187ms)
+✔ [6/16] Built Export.Parse (2.2s)
+✔ [7/16] Built Comparator.Axioms (732ms)
+✔ [8/16] Built Comparator.Axioms:c.o (396ms)
+✔ [9/16] Built Comparator.Compare (852ms)
+✔ [10/16] Built Comparator (488ms)
+✔ [11/16] Built Comparator.Compare:c.o (503ms)
+✔ [12/16] Built Comparator:c.o (82ms)
+✔ [13/16] Built Main (2.6s)
+✔ [14/16] Built Export.Parse:c.o (4.7s)
+✔ [15/16] Built Main:c.o (1.1s)
+✔ [16/16] Built comparator:exe (1.2s)
+Build completed successfully (16 jobs).
+== lean4export @ 15f6055e299ad5b89345e533cc2192f4cc00f659
+✔ [2/6] Built Export (3.7s)
+✔ [3/6] Built Main (1.5s)
+✔ [4/6] Built Main:c.o (313ms)
+✔ [5/6] Built Export:c.o (3.6s)
+✔ [6/6] Built lean4export:exe (2.2s)
+Build completed successfully (6 jobs).
+== nanoda_lib @ 68d5ca9db226849b41a6fff59d796ff19d0a8840
+== landrun @ 811cfff51ceaf3d9843708aa6d22e9b84ccac8b4
+go: downloading github.com/zouuup/landrun v0.1.18-0.20260723122309-811cfff51cea
+== comparator comparator.json  (log: /root/eth_anthropic/formal-math/eth/.lake/comparator-logs/comparator.log)
+Building Challenge
+⚠ [8707/8708] Replayed Challenge
+warning: Challenge.lean:12:8: declaration uses `sorry`
+warning: Challenge.lean:16:8: declaration uses `sorry`
+Build completed successfully (8708 jobs).
+Exporting #[Nat, String, String.mk, Char, Quot, Quot.mk, Quot.lift, Quot.ind, MainResults.ethIsFalse, MainResults.mainTheorem, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce] from Challenge
+Building Solution
+Build completed successfully (9516 jobs).
+Exporting #[Nat, String, String.mk, Char, Quot, Quot.mk, Quot.lift, Quot.ind, MainResults.ethIsFalse, MainResults.mainTheorem, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce] from Solution
+Running nanoda kernel on solution
+nanoda kernel accepts the solution
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!
+PASS comparator.json
+All 1 comparator configuration(s) accepted.
+RESULT=ANTHROPIC_COMPARATOR_OK
+=============== 2026-10-30T21:26:27-03:00 etapa 9 fim
