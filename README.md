@@ -260,17 +260,16 @@ Cite the archived Zenodo record rather than this repository URL:
 
 **https://doi.org/10.5281/zenodo.23820111**
 
-That is the concept DOI, which resolves to the latest version. Each release also has its own version
-DOI: [10.5281/zenodo.23821421](https://doi.org/10.5281/zenodo.23821421) for v1.0.2,
+That is the concept DOI, which resolves to the latest archived version. Each release also has its
+own version DOI: [10.5281/zenodo.23836157](https://doi.org/10.5281/zenodo.23836157) for v1.1.0,
+[10.5281/zenodo.23821421](https://doi.org/10.5281/zenodo.23821421) for v1.0.2,
 [10.5281/zenodo.23821317](https://doi.org/10.5281/zenodo.23821317) for v1.0.1, which added the PDF,
 and [10.5281/zenodo.23820112](https://doi.org/10.5281/zenodo.23820112) for v1.0.0. Fields for a
 bibliography are in [`CITATION.cff`](CITATION.cff). MIT licence, see [`LICENSE`](LICENSE).
 
-**Which version holds what.** Everything up to v1.0.2 covers the openAI run and the arithmetic
-alone. The Anthropic replication lands in the next release, so a reader who follows the concept DOI
-before that release is archived will find sections 1 to 6 and not section 7; until then, this
-repository is ahead of the archive, and this paragraph says so rather than leaving the gap to be
-discovered.
+**Which version holds what**, so that a citation to an older one is read correctly: v1.0.0 through
+v1.0.2 cover the openAI run and the arithmetic alone, and **v1.1.0 is the first to carry both
+replications**, section 7 included.
 
 The PDF is also attached to each release, so it can be fetched without unpacking the archive:
-`https://github.com/totobusnello/eth-subexp-note/releases/download/v1.0.2/eth-subexp-note.pdf`
+`https://github.com/totobusnello/eth-subexp-note/releases/download/v1.1.0/eth-subexp-note.pdf`
